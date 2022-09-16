@@ -6,13 +6,17 @@ import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ChatComponent } from './components/chat/chat.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomePageComponent,
-    MenuPageComponent
+    MenuPageComponent,
+    ButtonComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
