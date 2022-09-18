@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "projet-integrateur-66811": {
+      "hosting": {
+        "projet-integrateur": [
+          "projet-integrateur-66811"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "projet-integrateur-66811"
+  }
+}
