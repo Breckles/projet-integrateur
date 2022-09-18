@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from "@angular/forms";
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
-import {firebase, FirebaseUIModule} from 'firebaseui-angular';
+import { firebase, FirebaseUIModule } from 'firebaseui-angular';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +12,15 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 
-import { AngularFireModule } from "@angular/fire/compat";
-import { AngularFireAuthModule, SETTINGS as AUTH_SETTINGS, USE_EMULATOR as USE_AUTH_EMULATOR } from "@angular/fire/compat/auth";
+import { AngularFireModule } from '@angular/fire/compat';
+import {
+  AngularFireAuthModule,
+  SETTINGS as AUTH_SETTINGS,
+  USE_EMULATOR as USE_AUTH_EMULATOR,
+} from '@angular/fire/compat/auth';
+
+// Material components
+import { MatDialogModule } from '@angular/material/dialog';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -21,8 +28,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     // Currently, only email authentication is enabled
     {
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID,
-      requireDisplayName: false
-    }
+      requireDisplayName: false,
+    },
   ],
   // tosUrl: '<your-tos-link>',
   // privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
@@ -34,7 +41,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     LayoutComponent,
     HomePageComponent,
-    MenuPageComponent
+    MenuPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,13 +50,17 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    MatDialogModule,
   ],
   providers: [
-    {provide: AUTH_SETTINGS, useValue: {appVerificationDisabledForTesting: true}}
+    {
+      provide: AUTH_SETTINGS,
+      useValue: { appVerificationDisabledForTesting: true },
+    },
     // For testing purposes
     // { provide: USE_AUTH_EMULATOR, useValue: !environment.production ? ['http://localhost', 9099] : undefined },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
