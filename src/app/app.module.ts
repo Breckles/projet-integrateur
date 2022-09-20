@@ -21,6 +21,7 @@ import {
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthComponent } from './components/auth/auth.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -42,6 +43,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LayoutComponent,
     HomePageComponent,
     MenuPageComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
