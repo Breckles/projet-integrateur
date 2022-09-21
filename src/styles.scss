@@ -1,13 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~firebaseui/dist/firebaseui.css';
+
 * {
   font-family: 'Poppins', sans-serif;
 }
 
-body{
-  background-color: #f9f9fc;
+html,
+body {
+  height: 100%;
 }
 
+body {
+  margin: 0;
+  background-color: #f9f9fc;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 
- 
-  
+// overwrite firebaseui styles
+.firebaseui-container {
+  border: none;
+  box-shadow: none;
+}
