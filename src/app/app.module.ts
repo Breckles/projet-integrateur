@@ -19,8 +19,19 @@ import {
   USE_EMULATOR as USE_AUTH_EMULATOR,
 } from '@angular/fire/compat/auth';
 
+import { WeekblockComponent } from './components/weekblock/weekblock.component';
+
+
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
+import { HeaderComponent } from './components/header/header.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatListModule} from '@angular/material/list';
+import {MatInputModule} from '@angular/material/input';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCardModule} from '@angular/material/card';
+import { DateadComponent } from './components/datead/datead.component';
+
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -42,6 +53,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LayoutComponent,
     HomePageComponent,
     MenuPageComponent,
+    HeaderComponent,
+    WeekblockComponent,
+    DateadComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -52,6 +67,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AngularFireAuthModule,
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     MatDialogModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatInputModule,
+    MatIconModule,
+    MatCardModule,
   ],
   providers: [
     {

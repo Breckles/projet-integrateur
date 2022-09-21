@@ -1,0 +1,25 @@
+$grey: #333333;
+$grey-light: #c9c9c9;
+$red: #de342d;
+$red-light: #ee9591;
+$white: #f9f9fc;
+$orange:#fa6e05;
+$orange-light: #fdcfac;
+$beige:#f0d5b3;
+$beige-light:#faf1e6;
+$mauve:#a5389d;
+
+.nav-list{
+    display: inline-flex;
+    justify-content: flex-start;
+    //width: 150px;
+}
+
+.active{
+background-color: aquamarine;
+}
+
+.nav-item__logout{
+    display: inline-flex;
+    justify-content: flex-end;
+ }

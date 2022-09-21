@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>Organiser vos plats préférés pour la semaine</mat-card-title>
+  <mat-card-subtitle>Sélectionner un jour de la semaine</mat-card-subtitle>
+  <mat-card-actions appearance="outline">
+    <mat-selection-list  class="week-list" #days [multiple]="false">
+        <mat-list-option class="day-list" *ngFor="let day of typesOfDay" [value]="day">
+          {{day}}
+        </mat-list-option>
+      </mat-selection-list>
+  </mat-card-actions>
+</mat-card>
