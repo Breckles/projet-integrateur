@@ -38,6 +38,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
 
 
 
@@ -68,6 +69,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     DateadComponent,
     FooterComponent,
     RecipesCardBlockComponent,
+    RecipesArticleCardComponent,
   ],
   imports: [
     BrowserModule,
