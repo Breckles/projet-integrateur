@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
   CanActivate,
+  Router,
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
@@ -9,14 +10,20 @@ import { Observable, map } from 'rxjs';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
-import { MatDialog } from '@angular/material/dialog';
 import { FirebaseuiAngularLibraryComponent } from 'firebaseui-angular';
+
+import { ModalService } from '../services/modal.service';
+import { AuthComponent } from '../components/auth/auth.component';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserLoggedInGuard implements CanActivate {
-  constructor(private auth: AngularFireAuth, private dialog: MatDialog) {}
+  constructor(
+    private auth: AngularFireAuth,
+    private modalService: ModalService,
+    private router: Router
+  ) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
@@ -29,9 +36,8 @@ export class UserLoggedInGuard implements CanActivate {
     return this.auth.user.pipe(
       map((user) => {
         if (user == null) {
-          this.dialog.open(FirebaseuiAngularLibraryComponent);
+          this.modalService.openModal<AuthComponent>(AuthComponent, state.url);
         }
-
         return user != null;
       })
     );

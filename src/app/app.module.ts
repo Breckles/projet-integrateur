@@ -21,17 +21,16 @@ import {
 
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
 
-
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
+import { AuthComponent } from './components/auth/auth.component';
 import { HeaderComponent } from './components/header/header.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatListModule} from '@angular/material/list';
-import {MatInputModule} from '@angular/material/input';
-import {MatIconModule} from '@angular/material/icon';
-import {MatCardModule} from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import { DateadComponent } from './components/datead/datead.component';
-
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -53,10 +52,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LayoutComponent,
     HomePageComponent,
     MenuPageComponent,
+    AuthComponent,
     HeaderComponent,
     WeekblockComponent,
     DateadComponent,
-    
   ],
   imports: [
     BrowserModule,
