@@ -1,28 +1,16 @@
-
-.nav-list{
-    display: inline-flex;
-    justify-content: flex-start;
-    //width: 150px;
+.header-nav{
+    justify-content: space-between;
 }
 
 .active{
 background-color: aquamarine;
 }
 
-mat-list-item{
-    display: flex;
-    position: relative;
-    float: right;
-    
- }
-
 
  /**** MEDIA QUERY SIZE <= 600 ****/
 
  @media screen and (min-width: 600px) {
-    header#header-nav{
-        
-    }
+   
 
 button.nav-menu-toggle{
     display: none;

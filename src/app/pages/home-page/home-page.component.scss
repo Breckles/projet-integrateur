@@ -1,13 +1,26 @@
-#container {
+/******** MOBILE >= 375PX *********/
+#home-container {
   border: 2px solid blue;
   display: flex;
+  flex-direction: column;
   height: 100%;
+  padding: 10px;
+}
+#home-container-desktop{
+  display:none;
 }
 
-app-weekblock {
-  flex: 1;
+.date-ad-block{
+  display: none;
 }
 
-app-datead {
-  width: 200px;
+/******** DESKTOP >= 1140PX *********/
+@media screen and (min-width: 1140px) {
+  #home-container-desktop{
+    display:unset;
+  }
+
+  #home-container{
+    display: none;
+  }
 }

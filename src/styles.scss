@@ -2,18 +2,27 @@
 @use 'theme';
 @import '~firebaseui/dist/firebaseui.css';
 
-* {
+*, *::before, *::after{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  
+}
+
+html{
+  // Set document-wide 'rem' value
+  font-size: 10px;
+  height: 100vh;
+  min-width: 100vw;
+  width: 100%;
   font-family: 'Poppins', sans-serif;
 }
 
-html,
-body {
+body{
+  // Set body font-size back to usual default
+  font-size: 16px;
   height: 100%;
-}
-
-body {
-  margin: 0;
-  background-color: #f9f9fc;
+  width: 100%;
 }
 
 // overwrite firebaseui styles

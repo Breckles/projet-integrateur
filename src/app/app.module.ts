@@ -20,6 +20,9 @@ import {
 } from '@angular/fire/compat/auth';
 
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
+import { RecipesCardBlockComponent } from './components/recipes-card-block/recipes-card-block.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
@@ -31,9 +34,12 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { DateadComponent } from './components/datead/datead.component';
-import { FooterComponent } from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import {MatGridListModule} from '@angular/material/grid-list';
+
+
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -61,6 +67,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     WeekblockComponent,
     DateadComponent,
     FooterComponent,
+    RecipesCardBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -78,6 +85,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatGridListModule,
   ],
   providers: [
     {

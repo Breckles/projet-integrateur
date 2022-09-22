@@ -9,6 +9,5 @@ export class WeekblockComponent implements OnInit {
   constructor() { }
   ngOnInit(): void {
   }
-  typesOfDay: string[] = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
 
 }
