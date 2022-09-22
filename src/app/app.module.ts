@@ -31,7 +31,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { DateadComponent } from './components/datead/datead.component';
+import { FooterComponent } from './components/footer/footer.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -58,6 +60,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     HeaderComponent,
     WeekblockComponent,
     DateadComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -74,6 +77,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatIconModule,
     MatCardModule,
     MatToolbarModule,
+    MatButtonModule,
   ],
   providers: [
     {
