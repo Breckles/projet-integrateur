@@ -16,9 +16,9 @@ export class HeaderComponent implements OnInit {
       this.auth.signOut();
     }
 
-    isShowDiv = false
+   /* isShowDiv = false
     menuToggle(){ 
       this.isShowDiv = !this.isShowDiv;
-    }
+    }*/
 
 }
