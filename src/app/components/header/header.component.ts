@@ -8,7 +8,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 })
 
 
-
 export class HeaderComponent implements OnInit {
 
     constructor(private auth: AngularFireAuth) {}
@@ -17,5 +16,9 @@ export class HeaderComponent implements OnInit {
       this.auth.signOut();
     }
 
+    isShowDiv = false
+    menuToggle(){ 
+      this.isShowDiv = !this.isShowDiv;
+    }
 
 }

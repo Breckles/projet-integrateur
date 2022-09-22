@@ -19,7 +19,39 @@ $mauve:#a5389d;
 background-color: aquamarine;
 }
 
-.nav-item__logout{
-    display: inline-flex;
-    justify-content: flex-end;
+mat-list-item{
+    display: flex;
+    position: relative;
+    float: right;
+    
+ }
+
+
+ /**** MEDIA QUERY SIZE <= 600 ****/
+
+ @media screen and (min-width: 600px) {
+    header#header-nav{
+        
+    }
+
+button.nav-menu-toggle{
+    display: none;
+}
+
+mat-nav-list.nav-list{
+    display:block;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
  }

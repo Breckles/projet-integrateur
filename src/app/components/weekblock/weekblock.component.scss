@@ -15,16 +15,14 @@ mat-card{
     padding: 30px;
 }
 
-
-mat-selection-list{
-    display: flex;
-    padding: 0;
-    margin: 10px 0;
+mat-card-actions{
+    display: inline-flex;
 }
 
-.week-list{
+mat-selection-list{
     display: inline-flex;
-    justify-content: flex-start;
+    padding: 0;
+    margin: 10px 0;
     border-radius: 10px;
     border: solid $grey;
 }
