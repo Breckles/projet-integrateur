@@ -1,32 +1,20 @@
-.header-nav{
-    justify-content: space-between;
-}
-
 .active{
 background-color: aquamarine;
 }
 
-
- /**** MEDIA QUERY SIZE <= 600 ****/
-
- @media screen and (min-width: 600px) {
-   
-
-button.nav-menu-toggle{
-    display: none;
+#header-nav>.nav-list-desktop{
+display: none;
 }
 
 
 
+/******** DESKTOP >= 1140PX *********/
+ @media screen and (min-width: 1140px) {
+#header-nav>.nav-list-desktop{
+    display: unset;
+} 
 
-
-
-
-
-
-
-
-
-
-
+#header-nav>.nav-menu{
+    display: none;
+}
  }

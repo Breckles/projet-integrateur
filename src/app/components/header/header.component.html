@@ -1,21 +1,25 @@
 <header id="header-nav">
-<button class="nav-menu-toggle"  mat-icon-button color="accent" aria-label="Example icon button with a menu icon">
-    <mat-icon>menu</mat-icon>
-  </button> 
+  <mat-toolbar class="nav-menu">
+    <mat-icon button mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
+      <button mat-menu-item class="nav-item"><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
+    </mat-menu>
+  </mat-toolbar>
 
-  <mat-nav-list class="nav-list">
+  <mat-nav-list class="nav-list-desktop">
     <mat-toolbar>
       <button class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
-    <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
+      <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
 
-    <mat-form-field appearance="outline">
-      <input matInput placeholder="Rechercher">
-      <mat-icon matSuffix>search</mat-icon>
-    </mat-form-field>
+      <mat-form-field appearance="outline">
+        <input matInput placeholder="Rechercher">
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
 
-    <mat-list-item >
-      <button class="nav-item__logout" (click)="logout()">Logout</button>
-    </mat-list-item>
+      <mat-list-item>
+        <button class="nav-item__logout" (click)="logout()">Logout</button>
+      </mat-list-item>
     </mat-toolbar>
   </mat-nav-list>
 </header>
