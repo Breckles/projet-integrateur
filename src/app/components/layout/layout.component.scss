@@ -1,7 +1,13 @@
-* {
-    margin: 0 80px;
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-main{
-    margin: 0;
+main {
+  flex: 1;
+}
+
+#content {
+  height: 100%;
 }

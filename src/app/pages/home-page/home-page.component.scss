@@ -1,12 +1,13 @@
 #container {
   border: 2px solid blue;
-  display:flex;
+  display: flex;
+  height: 100%;
 }
 
-app-weekblock{
+app-weekblock {
   flex: 1;
 }
 
-app-datead{
-  width: 200px; 
+app-datead {
+  width: 200px;
 }
