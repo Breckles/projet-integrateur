@@ -1,7 +1,10 @@
-.spacer {
-    flex: 1 1 auto;
-}
-.mat-toolbar.mat-primary {
+
+.mat-toolbar {
+    justify-content: center;  
     background:  #333333;
-    color: #faf1e6;
+    color: #ffffff;
+    position: fixed;
+    bottom:0;
+height: 100px;
   }
+ 
