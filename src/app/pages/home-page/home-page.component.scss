@@ -3,6 +3,8 @@
  // border: 2px solid blue;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap:16px;
   height: 100%;
   padding: 25px;
 }
@@ -11,7 +13,11 @@
   display:none;
 }
 
-
+.recipes-block,
+.repas-block,
+.week-block{
+  margin: 10px;
+}
 
 
 

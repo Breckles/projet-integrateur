@@ -1,10 +1,14 @@
 .recipes-card-layout {
   display: inline-flex;
   flex-flow: row wrap;
-
+  gap: 10px;
   .card-group {
-    padding: 25px;
-
-    .recipes-card {}
+    padding: 10px;
+    justify-content: space-between;
+    .recipes-card {
+      flex-basis: calc(25% - 3px);
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
   }
 }
