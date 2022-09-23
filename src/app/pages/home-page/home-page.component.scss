@@ -1,21 +1,20 @@
 /******** MOBILE >= 375PX *********/
 #home-container {
- // border: 2px solid blue;
+  // border: 2px solid blue;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  gap:16px;
-  height: 100%;
+  gap: 16px;
+  // height: 100%;
   padding: 25px;
 }
 
-#home-container-desktop{
-  display:none;
+#home-container-desktop {
+  display: none;
 }
 
 .recipes-block,
 .repas-block,
-.week-block{
+.week-block {
   margin: 10px;
 }
 
@@ -24,11 +23,11 @@
 
 /******** DESKTOP >= 1140PX *********/
 @media screen and (min-width: 1140px) {
-  #home-container-desktop{
-    display:unset;
+  #home-container-desktop {
+    display: unset;
   }
 
-  #home-container{
+  #home-container {
     display: none;
   }
 
