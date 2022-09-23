@@ -1,17 +1,17 @@
 <div id="home-container">
- <mat-grid-list cols="1" rowHeight="300px">
+ <mat-grid-list cols="1" rowHeight="200px">
   <mat-grid-tile class="week-block"><app-weekblock></app-weekblock></mat-grid-tile>
-  <mat-grid-tile class="date-ad-block"><app-datead></app-datead></mat-grid-tile>
-  <mat-grid-tile class="recipes-block"><app-recipes-card-block></app-recipes-card-block></mat-grid-tile>
- </mat-grid-list>
-
+  <mat-grid-tile class="recipes-block"><app-recipes-card-block ></app-recipes-card-block></mat-grid-tile>
+ </mat-grid-list> 
 </div>
 
 <div id="home-container-desktop">
   <mat-grid-list cols="4" rowHeight="300px">
    <mat-grid-tile [colspan]="3" class="week-block"><app-weekblock></app-weekblock></mat-grid-tile>
    <mat-grid-tile [colspan]="1" class="date-ad-block"><app-datead></app-datead></mat-grid-tile>
-   <mat-grid-tile [colspan]="2" class="recipes-block"><app-recipes-card-block></app-recipes-card-block></mat-grid-tile>
   </mat-grid-list>
+  <mat-grid-list cols="1" rowHeight="300px">
+    <mat-grid-tile class="recipes-block"><app-recipes-card-block ></app-recipes-card-block></mat-grid-tile>
+   </mat-grid-list>
  </div>
  

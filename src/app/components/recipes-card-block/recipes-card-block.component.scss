@@ -1,0 +1,10 @@
+.recipes-card-layout {
+  display: inline-flex;
+  flex-flow: row wrap;
+
+  .card-group {
+    padding: 25px;
+
+    .recipes-card {}
+  }
+}

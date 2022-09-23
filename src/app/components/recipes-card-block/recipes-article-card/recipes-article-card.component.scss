@@ -1,0 +1,18 @@
+.recipes-card{
+    border:none;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipes-card{
+  width: 200px;
+  }
+
+
+
+  @media only screen and (min-width: 1140px) //if more than 1140 px
+  {
+    .recipes-card{
+      font-size:14px
+    }
+  }

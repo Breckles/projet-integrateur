@@ -1,6 +1,7 @@
-mat-list{
+.week-card>mat-list{
     border:none;
-    display: flex;
-    flex-direction: row;
+    display: inline-flex;
+    flex-direction: row wrap;
+    width: 200px;
 }
 
