@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { filter, pairwise, take } from 'rxjs';
 
-import { ModalService } from 'src/app/services/modal.service';
+import { ModalService } from 'services/modal.service';
 
 @Component({
   selector: 'app-auth',
