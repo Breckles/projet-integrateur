@@ -11,7 +11,7 @@ import { PoidMesure, Categorie } from 'models/article.model';
   styleUrls: ['./recipe-create.component.scss'],
 })
 export class RecipeCreateComponent implements OnInit {
-  ingredientFormList = new FormArray<FormGroup>([]);
+  ingredientFormList = new FormArray([]);
 
   typeLabels = ['Entree', 'Plat Principale', 'Dessert', 'A cote', 'Autre'];
   poidMesureLabels = [
@@ -48,11 +48,12 @@ export class RecipeCreateComponent implements OnInit {
   });
 
   ngOnInit(): void {
-    this.addIngredient();
+    this.onAddIngredient();
   }
 
-  addIngredient() {
-    this.ingredientFormList.push(
+  onAddIngredient() {
+    const ingredients = this.recipeForm.get('ingredients') as FormArray;
+    ingredients.push(
       new FormGroup({
         nom: new FormControl<string>('', Validators.required),
         preparation: new FormControl<string>(''),
@@ -69,8 +70,15 @@ export class RecipeCreateComponent implements OnInit {
     );
   }
 
-  getIngredients() {
-    return this.recipeForm.get('ingredients') as FormArray;
+  onRemoveIngredient(index: number) {
+    const ingredients = this.recipeForm.get('ingredients') as FormArray;
+
+    ingredients.removeAt(index);
+  }
+
+  getIngredientControls() {
+    return (<FormArray>this.recipeForm.get('ingredients')).controls;
+    // return this.recipeForm.get('ingredients') as FormArray;
   }
 
   onSubmit() {
