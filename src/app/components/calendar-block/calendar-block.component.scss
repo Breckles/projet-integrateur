@@ -1,4 +1,10 @@
-.inline-calendar-card {
-    border: 1px solid #333333;
-  
+
+
+/******** DESKTOP >= 1140PX *********/
+@media screen and (min-width: 1140px) {
+  mat-accordion {
+    width: 400px;
   }
+
+
+}

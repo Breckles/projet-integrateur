@@ -1,11 +1,33 @@
-#menu-container{
+/******** MOBILE >= 375PX *********/
+#menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  height: 400px;
+  padding: 25px;
+}
+
+#menu-grid{
+width: 100%;
+}
+
+#menu-container-destop{
+  display:none;
+}
+
+/******** DESKTOP >= 1140PX *********/
+@media screen and (min-width: 1140px) {
+ #menu-container{
+  display:none;
+ }
+
+ #menu-container-destop{
+  display: unset;
   display: flex;
   flex-direction: column;
   gap: 16px;
   //height: 100%;
   padding: 25px;
-}
+ }
 
-.menu-grid{
-width: 100%;
 }

@@ -45,8 +45,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatExpansionModule} from '@angular/material/expansion';
-
-
+import {LayoutModule} from '@angular/cdk/layout';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -100,6 +99,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule,
+    LayoutModule,
   ],
   providers: [
     {
