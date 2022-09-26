@@ -19,28 +19,32 @@ import {
   USE_EMULATOR as USE_AUTH_EMULATOR,
 } from '@angular/fire/compat/auth';
 
+import { AuthComponent } from './components/auth/auth.component';
+import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
 import { RecipesCardBlockComponent } from './components/recipes-card-block/recipes-card-block.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
+import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
+import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
+import { DateadComponent } from './components/datead/datead.component';
 
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
-import { AuthComponent } from './components/auth/auth.component';
-import { HeaderComponent } from './components/header/header.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatListModule } from '@angular/material/list';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
-import { DateadComponent } from './components/datead/datead.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatGridListModule} from '@angular/material/grid-list';
-import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
 import {MatMenuModule} from '@angular/material/menu';
-import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -72,6 +76,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RecipesCardBlockComponent,
     RecipesArticleCardComponent,
     TypesRepasBlockComponent,
+    CalendarBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -92,6 +97,9 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatButtonToggleModule,
     MatGridListModule,
     MatMenuModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatExpansionModule,
   ],
   providers: [
     {
