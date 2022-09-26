@@ -1,10 +1,25 @@
+#grid-desktop{
+  display: none;
+  }
+
+mat-grid-tile{
+  border: solid 2px black;
+}
+
+.calendar-grid{
+  box-sizing: content-box;
+  width: 100%;
+}
 
 
 /******** DESKTOP >= 1140PX *********/
 @media screen and (min-width: 1140px) {
-  mat-accordion {
-    width: 400px;
-  }
+#grid-mobile{
+  display: none;
+}
 
+#grid-desktop{
+  display: unset;
+}
 
 }
