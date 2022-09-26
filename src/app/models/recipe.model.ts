@@ -8,17 +8,15 @@ export enum TypeRecette {
   AUTRE,
 }
 
-export class Recette {
-  constructor(
-    private id: string,
-    private nom: string,
-    private image: string,
-    private nombreServis: number,
-    private tempPreparation: number,
-    private tempCuisson: number,
-    private ingredients: IIngredientRecette[],
-    private creerPar: string,
-    private dateCreation: Date,
-    private typeRecette: TypeRecette[]
-  ) {}
+export interface IRecette {
+  id: string;
+  nom: string;
+  image: string;
+  nombreServis: number;
+  tempPreparation: number;
+  tempCuisson: number;
+  ingredients: IIngredientRecette[];
+  creerPar: string;
+  dateCreation: Date;
+  typeRecette: TypeRecette[];
 }

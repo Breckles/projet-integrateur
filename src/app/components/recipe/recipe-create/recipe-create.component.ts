@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
-import { Recette, TypeRecette } from 'models/recipe.model';
+import { IRecette, TypeRecette } from 'models/recipe.model';
 import { IIngredientRecette } from 'models/ingredient-recette.model';
 import { PoidMesure, Categorie } from 'models/article.model';
 
