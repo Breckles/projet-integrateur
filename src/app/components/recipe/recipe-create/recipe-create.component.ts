@@ -4,6 +4,7 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { IRecette, TypeRecette } from 'models/recipe.model';
 import { IIngredientRecette } from 'models/ingredient-recette.model';
 import { PoidMesure, Categorie } from 'models/article.model';
+import { RecipeService } from 'services/recipe.service';
 
 @Component({
   selector: 'app-recipe-create',
@@ -12,6 +13,8 @@ import { PoidMesure, Categorie } from 'models/article.model';
 })
 export class RecipeCreateComponent implements OnInit {
   ingredientFormList = new FormArray([]);
+
+  constructor(private recipeService: RecipeService) {}
 
   typeLabels = ['Entree', 'Plat Principale', 'Dessert', 'A cote', 'Autre'];
   poidMesureLabels = [
@@ -83,5 +86,41 @@ export class RecipeCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.recipeForm);
+    let recipe: IRecette = {
+      id: '123',
+      nom: 'pate chinois',
+      image: 'mmmmm.ca',
+      nombreServis: 2,
+      tempPreparation: 120,
+      tempCuisson: 60,
+      ingredients: [
+        {
+          nom: 'steak',
+          preparation: 'hache',
+          quantite: 1,
+          unites: 1,
+          categorie: 1,
+        },
+        {
+          nom: "ble d'inde",
+          preparation: 'en canne',
+          quantite: 1,
+          unites: 1,
+          categorie: 1,
+        },
+        {
+          nom: 'patate',
+          preparation: 'pilees',
+          quantite: 1,
+          unites: 1,
+          categorie: 1,
+        },
+      ],
+      creerPar: 'Moman',
+      dateCreation: new Date(),
+      typeRecette: [2],
+    };
+
+    this.recipeService.createRecipe(recipe);
   }
 }
