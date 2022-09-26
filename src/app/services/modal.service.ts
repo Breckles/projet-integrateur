@@ -16,14 +16,17 @@ export class ModalService {
     redirectOnClose?: string
   ) {
     this.redirectUrl = redirectOnClose;
-    this.modal.open<T>(modalContent);
+    this.modal.open<T>(modalContent, { maxHeight: '90vh' });
+    this.modal.afterAllClosed.subscribe(() => {
+      this.redirectUrl = undefined;
+    });
   }
 
   closeModal() {
-    this.modal.closeAll();
-
     if (this.redirectUrl) {
       this.router.navigate([this.redirectUrl]);
     }
+
+    this.modal.closeAll();
   }
 }
