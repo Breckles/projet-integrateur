@@ -29,6 +29,8 @@ import { TypesRepasBlockComponent } from './components/types-repas-block/types-r
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
 import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
 import { DateadComponent } from './components/datead/datead.component';
+import { AddRecipeButtonComponent } from './components/recipe/add-recipe-button/add-recipe-button.component';
+import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
