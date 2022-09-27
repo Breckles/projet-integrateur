@@ -3,7 +3,9 @@
   flex-direction: column;
   gap: 16px;
   width: 100vw;
+  max-width: 1200px;
   min-height: 100vh;
+  margin: 0 auto;
 }
 
 app-header {

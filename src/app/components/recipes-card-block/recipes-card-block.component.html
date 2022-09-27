@@ -1,5 +1,5 @@
 <mat-list>
-  <mat-list-item>
+  <!-- <mat-list-item>
     <app-recipes-article-card class="recipes-card"></app-recipes-article-card>
   </mat-list-item>
   <mat-list-item>
@@ -10,5 +10,8 @@
   </mat-list-item>
   <mat-list-item>
     <app-recipes-article-card class="recipes-card"></app-recipes-article-card>
+  </mat-list-item> -->
+  <mat-list-item *ngFor="let recipe of recipes">
+    <app-recipes-article-card [recipe]="recipe"></app-recipes-article-card>
   </mat-list-item>
 </mat-list>
