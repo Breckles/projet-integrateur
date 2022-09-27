@@ -1,4 +1,5 @@
 import IIngredientRecette from './ingredient-recette.model';
+import firebase from 'firebase/compat/app';
 
 export enum TypeRecette {
   ENTREE,
@@ -10,13 +11,13 @@ export enum TypeRecette {
 
 export interface IRecette {
   id: string;
+  creerPar: string;
+  dateCreation: Date | firebase.firestore.FieldValue;
   nom: string;
   image: string;
   nombreServis: number;
   tempPreparation: number;
   tempCuisson: number;
   ingredients: IIngredientRecette[];
-  creerPar: string;
-  dateCreation: Date;
   typeRecette: TypeRecette[];
 }

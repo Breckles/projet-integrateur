@@ -86,41 +86,56 @@ export class RecipeCreateComponent implements OnInit {
 
   onSubmit() {
     console.log(this.recipeForm);
-    let recipe: IRecette = {
-      id: '123',
-      nom: 'pate chinois',
-      image: 'mmmmm.ca',
-      nombreServis: 2,
-      tempPreparation: 120,
-      tempCuisson: 60,
-      ingredients: [
-        {
-          nom: 'steak',
-          preparation: 'hache',
-          quantite: 1,
-          unites: 1,
-          categorie: 1,
-        },
-        {
-          nom: "ble d'inde",
-          preparation: 'en canne',
-          quantite: 1,
-          unites: 1,
-          categorie: 1,
-        },
-        {
-          nom: 'patate',
-          preparation: 'pilees',
-          quantite: 1,
-          unites: 1,
-          categorie: 1,
-        },
-      ],
-      creerPar: 'Moman',
-      dateCreation: new Date(),
-      typeRecette: [2],
-    };
+    console.log(this.recipeForm.valid);
+    // let recipe: IRecette = {
+    //   id: '123',
+    //   nom: 'pate chinois',
+    //   image: 'mmmmm.ca',
+    //   nombreServis: 2,
+    //   tempPreparation: 120,
+    //   tempCuisson: 60,
+    //   ingredients: [
+    //     {
+    //       nom: 'steak',
+    //       preparation: 'hache',
+    //       quantite: 1,
+    //       unites: 1,
+    //       categorie: 1,
+    //     },
+    //     {
+    //       nom: "ble d'inde",
+    //       preparation: 'en canne',
+    //       quantite: 1,
+    //       unites: 1,
+    //       categorie: 1,
+    //     },
+    //     {
+    //       nom: 'patate',
+    //       preparation: 'pilees',
+    //       quantite: 1,
+    //       unites: 1,
+    //       categorie: 1,
+    //     },
+    //   ],
+    //   creerPar: 'Moman',
+    //   dateCreation: new Date(),
+    //   typeRecette: [2],
+    // };
 
-    this.recipeService.createRecipe(recipe);
+    if (this.recipeForm.valid) {
+      console.log(this.recipeForm.value);
+      const recipe = {
+        nom: this.recipeForm.value.nom as string,
+        image: this.recipeForm.value.image as string,
+        nombreServis: this.recipeForm.value.nombreServis as number,
+        tempCuisson: this.recipeForm.value.tempCuisson as number,
+        tempPreparation: this.recipeForm.value.tempPreparation as number,
+        typeRecette: [this.recipeForm.value.typeRecette] as TypeRecette[],
+        ingredients: this.recipeForm.value.ingredients as IIngredientRecette[],
+      };
+      this.recipeService.createRecipe(recipe);
+    }
+
+    // this.recipeService.createRecipe(recipe);
   }
 }
