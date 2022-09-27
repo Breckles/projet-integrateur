@@ -20,23 +20,3 @@
 </mat-grid-list>
 
 
-<mat-grid-list id="grid-desktop" cols="4" rowHeight="2:4" gutterSize="10px">
-  <mat-grid-tile colspan="2" rowspan="1"> <!-- Etape 1 - Calendrier -->
-    <div class="calendar-grid">
-      <mat-calendar class="inline-calendar-card" [(selected)]="selected">
-        [formGroup]="campaignTwo"
-        [rangePicker]="campaignTwoPicker"
-        [comparisonStart]="campaignOne.value.start"
-        [comparisonEnd]="campaignOne.value.end">
-      </mat-calendar>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="2" rowspan="1"> 2 </mat-grid-tile> <!-- Etape 3 - la semaine/journée -->
-  <mat-grid-tile colspan="1" rowspan="1"> <!-- Etape 2 - Button ajouter recipes -->
-    <div>
-      <p>{{selected | json}}</p>
-      <app-add-recipe-button></app-add-recipe-button>
-    </div>
-  </mat-grid-tile>
-  <mat-grid-tile colspan="3" rowspan="1"> 4 </mat-grid-tile> <!-- Etape 4 - Calendrier -->
-</mat-grid-list>
