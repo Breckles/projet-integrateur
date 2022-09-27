@@ -47,6 +47,7 @@ export class RecipeCreateComponent implements OnInit {
       TypeRecette.AUTRE,
       Validators.required
     ),
+    instructions: new FormControl<string>(''),
     ingredients: this.ingredientFormList,
   });
 
@@ -87,40 +88,6 @@ export class RecipeCreateComponent implements OnInit {
   onSubmit() {
     console.log(this.recipeForm);
     console.log(this.recipeForm.valid);
-    // let recipe: IRecette = {
-    //   id: '123',
-    //   nom: 'pate chinois',
-    //   image: 'mmmmm.ca',
-    //   nombreServis: 2,
-    //   tempPreparation: 120,
-    //   tempCuisson: 60,
-    //   ingredients: [
-    //     {
-    //       nom: 'steak',
-    //       preparation: 'hache',
-    //       quantite: 1,
-    //       unites: 1,
-    //       categorie: 1,
-    //     },
-    //     {
-    //       nom: "ble d'inde",
-    //       preparation: 'en canne',
-    //       quantite: 1,
-    //       unites: 1,
-    //       categorie: 1,
-    //     },
-    //     {
-    //       nom: 'patate',
-    //       preparation: 'pilees',
-    //       quantite: 1,
-    //       unites: 1,
-    //       categorie: 1,
-    //     },
-    //   ],
-    //   creerPar: 'Moman',
-    //   dateCreation: new Date(),
-    //   typeRecette: [2],
-    // };
 
     if (this.recipeForm.valid) {
       console.log(this.recipeForm.value);
@@ -131,6 +98,7 @@ export class RecipeCreateComponent implements OnInit {
         tempCuisson: this.recipeForm.value.tempCuisson as number,
         tempPreparation: this.recipeForm.value.tempPreparation as number,
         typeRecette: [this.recipeForm.value.typeRecette] as TypeRecette[],
+        instructions: this.recipeForm.value.instructions as string,
         ingredients: this.recipeForm.value.ingredients as IIngredientRecette[],
       };
       this.recipeService.createRecipe(recipe);
