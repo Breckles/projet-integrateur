@@ -50,6 +50,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -83,6 +84,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     TypesRepasBlockComponent,
     CalendarBlockComponent,
     RecipesPageComponent,
+    ProfilePageComponent,
   ],
   imports: [
     BrowserModule,
