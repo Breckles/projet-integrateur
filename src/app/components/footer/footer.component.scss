@@ -2,7 +2,31 @@
   justify-content: center;
   background: #333333;
   color: #ffffff;
-  // position: fixed;
-  bottom: 0;
   height: 100px;
+}
+/******** DESKTOP >= 1140PX *********/
+@media screen and (min-width: 1140px) {
+  .footer__mobile{
+    display:none;
+  }
+}
+ @media only screen and (max-width: 1140px) {
+  .footer__desktop{
+    display:none;
+  }
+  .footer__mobile {
+    background: #333333;
+  }
+  .mat-expansion-panel { 
+    background: #333333;
+  }
+  .mat-expansion-panel .mat-expansion-panel-header .mat-panel-title{
+    color: #ffffff !important;
+  }
+  .mat-list-item {
+    color: #ffffff !important;
+  }
+  /* .disable_ripple{
+    background: currentColor !important;
+    } */
 }

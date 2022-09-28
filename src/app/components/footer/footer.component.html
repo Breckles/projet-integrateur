@@ -1,7 +1,59 @@
+<footer class="footer__desktop">
 <mat-toolbar>
     <span>Recettes </span>
     <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
     <a mat-button routerLink="/menu" routerLinkActive="active">Mon profil</a>
     <a mat-button routerLink="/home" routerLinkActive="active">Recettes</a>
-<!--     <a mat-button routerLink="/home" routerLinkActive="active">Types de repas</a>
- --></mat-toolbar>
+    <a mat-button routerLink="/home" routerLinkActive="active">Types de repas</a>
+</mat-toolbar>
+</footer>
+<footer class="footer__mobile">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="setStep(0)" hideToggle="false">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="color: #ffffff">
+                    À propos
+                </mat-panel-title>
+                  <!--  <mat-icon>keyboard_arrow_down</mat-icon> -->
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Home</a></mat-list-item>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Menu</a></mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)" hideToggle="false">
+            <mat-expansion-panel-header >
+                <mat-panel-title style="color: #ffffff">
+                    Mon espace
+                </mat-panel-title>
+               
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Mon profil</a></mat-list-item>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Mon menu</a></mat-list-item>
+            </mat-nav-list>
+        </mat-expansion-panel>
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="false">
+            <mat-expansion-panel-header>
+                <mat-panel-title style="color: #ffffff">
+                    Recettes
+                </mat-panel-title>
+                  
+            </mat-expansion-panel-header>
+            <mat-nav-list>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Dejeuner</a></mat-list-item>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Diner</a></mat-list-item>
+                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Souper</a></mat-list-item>
+
+            </mat-nav-list>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+
+ <!-- <mat-toolbar> 
+    <span>Recettes </span>
+    <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
+    <a mat-button routerLink="/menu" routerLinkActive="active">Mon profil</a>
+    <a mat-button routerLink="/home" routerLinkActive="active">Recettes</a>
+</mat-toolbar> -->
+</footer>
