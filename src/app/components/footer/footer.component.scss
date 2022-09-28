@@ -4,29 +4,43 @@
   color: #ffffff;
   height: 100px;
 }
+
 /******** DESKTOP >= 1140PX *********/
 @media screen and (min-width: 1140px) {
-  .footer__mobile{
-    display:none;
+  .footer__mobile {
+    display: none;
   }
 }
- @media only screen and (max-width: 1140px) {
-  .footer__desktop{
-    display:none;
+
+@media only screen and (max-width: 1140px) {
+  .footer__desktop {
+    display: none;
   }
+
   .footer__mobile {
     background-color: #333333;
   }
-  .mat-expansion-panel { 
+
+  .mat-expansion-panel {
     background-color: #333333;
   }
-  .mat-expansion-panel .mat-expansion-panel-header .mat-panel-title{
+
+  .mat-expansion-panel .mat-expansion-panel-header .mat-panel-title {
     color: #ffffff !important;
   }
+
   .mat-list-item {
     color: #ffffff !important;
   }
+
   /* .disable_ripple{
     background: currentColor !important;
     } */
+
+  // quick and dirty hack for touch devices running chrome
+  @media (hover: none) {
+    .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+      background-color: #333333;
+    }
+  }
 }
