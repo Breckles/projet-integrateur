@@ -51,6 +51,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { LayoutModule } from '@angular/cdk/layout';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -85,6 +86,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     CalendarBlockComponent,
     RecipesPageComponent,
     ProfilePageComponent,
+    AdminPageComponent,
   ],
   imports: [
     BrowserModule,
