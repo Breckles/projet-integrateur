@@ -1,9 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-
-import { AngularFireAuth } from '@angular/fire/compat/auth';
-
-import firebase from 'firebase/compat/app';
 import { Subscription } from 'rxjs';
+
+import { AuthService } from 'services/auth.service';
+
+import { IUser } from 'models/user.model';
 
 @Component({
   selector: 'app-profile-page',
@@ -11,14 +11,15 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
-  private user: firebase.User | null = null;
+  private user: IUser | undefined;
   private userSubscription: Subscription | null = null;
 
-  constructor(private auth: AngularFireAuth) {}
+  constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
-    this.userSubscription = this.auth.user.subscribe((user) => {
+    this.userSubscription = this.auth.appUser.subscribe((user) => {
       this.user = user;
+      console.log(this.user);
     });
   }
 
