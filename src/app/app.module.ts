@@ -25,7 +25,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
 import { RecipesHomePageDisplayComponent } from './components/recipe/recipes-home-page-display/recipes-home-page-display.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TypesRepasArticleBlockComponent } from './components/types-repas-article-block/types-repas-article-block.component';
+import { RepasHomePageArticleComponent } from './components/repas/repas-home-page-article/repas-home-page-article.component';
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { DateadComponent } from './components/datead/datead.component';
@@ -34,7 +34,7 @@ import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { RepasHomePageFilterComponent } from './components/repas-home-page-filter/repas-home-page-filter.component';
+import { RepasHomePageFilterComponent } from './components/repas/repas-home-page-filter/repas-home-page-filter.component';
 import { RepasHomePageCardComponent } from './components/repas-home-page-card/repas-home-page-card.component';
 import { TypeRepasBtnBlockComponent } from './components/type-repas-btn-block/type-repas-btn-block.component';
 import { RepasHomePageButtonComponent } from './components/repas-home-page-card/repas-home-page-button/repas-home-page-button.component';
@@ -89,7 +89,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RecipeCreateComponent,
     AddRecipeButtonComponent,
     RecipeCardComponent,
-    TypesRepasArticleBlockComponent,
+    RepasHomePageArticleComponent,
     CalendarBlockComponent,
     RecipesPageComponent,
     ProfilePageComponent,
