@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RoutesRecognized } from '@angular/router';
 import { filter, pairwise, take } from 'rxjs';
+import { AuthService } from 'services/auth.service';
 
 import { ModalService } from 'services/modal.service';
 
@@ -12,7 +13,11 @@ import { ModalService } from 'services/modal.service';
 export class AuthComponent implements OnInit {
   private route: string = '';
 
-  constructor(private modalService: ModalService, private router: Router) {}
+  constructor(
+    private modalService: ModalService,
+    private router: Router,
+    private auth: AuthService
+  ) {}
 
   ngOnInit(): void {
     this.router.events
@@ -27,5 +32,6 @@ export class AuthComponent implements OnInit {
 
   onSignInSuccess() {
     this.modalService.closeModal();
+    // this.auth.setUser();
   }
 }
