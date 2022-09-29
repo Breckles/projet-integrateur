@@ -23,14 +23,24 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
-import { RecipesCardBlockComponent } from './components/recipes-card-block/recipes-card-block.component';
+import { RecipesHomePageDisplayComponent } from './components/recipe/recipes-home-page-display/recipes-home-page-display.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
+import { TypesRepasArticleBlockComponent } from './components/types-repas-article-block/types-repas-article-block.component';
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
-import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
+import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { DateadComponent } from './components/datead/datead.component';
 import { AddRecipeButtonComponent } from './components/recipe/add-recipe-button/add-recipe-button.component';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
+import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { TypeBtnBlockComponent } from './components/type-btn-block/type-btn-block.component';
+import { TypeRepasBlockComponent } from './components/type-repas-block/type-repas-block.component';
+import { TypeRepasBtnBlockComponent } from './components/type-repas-btn-block/type-repas-btn-block.component';
+import { TypeRepasBtnComponent } from './components/type-repas-block/type-repas-btn/type-repas-btn.component';
+import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
+import { RepasComponent } from './components/repas/repas.component';
+import { AddRepasButtonComponent } from './components/repas/add-repas-button/add-repas-button.component';
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
@@ -48,10 +58,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
-import { LayoutModule } from '@angular/cdk/layout';
-import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
-import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
-import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { MatTableModule } from '@angular/material/table';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -78,15 +85,22 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     WeekblockComponent,
     DateadComponent,
     FooterComponent,
-    RecipesCardBlockComponent,
+    RecipesHomePageDisplayComponent,
     RecipeCreateComponent,
     AddRecipeButtonComponent,
-    RecipesArticleCardComponent,
-    TypesRepasBlockComponent,
+    RecipeCardComponent,
+    TypesRepasArticleBlockComponent,
     CalendarBlockComponent,
     RecipesPageComponent,
     ProfilePageComponent,
     AdminPageComponent,
+    RepasComponent,
+    AddRepasButtonComponent,
+    TypeBtnBlockComponent,
+    TypeRepasBlockComponent,
+    TypeRepasBtnBlockComponent,
+    TypeRepasBtnComponent,
+    TypesRepasBlockComponent,
   ],
   imports: [
     BrowserModule,
@@ -112,7 +126,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatDatepickerModule,
     MatNativeDateModule,
     MatExpansionModule,
-    LayoutModule,
+    MatTableModule,
   ],
   providers: [
     {
