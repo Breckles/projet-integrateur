@@ -35,10 +35,6 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { RepasHomePageFilterComponent } from './components/repas/repas-home-page-filter/repas-home-page-filter.component';
-import { RepasHomePageCardComponent } from './components/repas-home-page-card/repas-home-page-card.component';
-import { TypeRepasBtnBlockComponent } from './components/type-repas-btn-block/type-repas-btn-block.component';
-import { RepasHomePageButtonComponent } from './components/repas-home-page-card/repas-home-page-button/repas-home-page-button.component';
-import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
 import { RepasComponent } from './components/repas/repas.component';
 import { AddRepasButtonComponent } from './components/repas/add-repas-button/add-repas-button.component';
 
@@ -97,10 +93,6 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RepasComponent,
     AddRepasButtonComponent,
     RepasHomePageFilterComponent,
-    RepasHomePageCardComponent,
-    TypeRepasBtnBlockComponent,
-    RepasHomePageButtonComponent,
-    TypesRepasBlockComponent,
   ],
   imports: [
     BrowserModule,
