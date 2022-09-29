@@ -1,0 +1,53 @@
+mat-grid-list {
+  max-width: 500px;
+}
+
+mat-card {
+  display: flex;
+  text-align: center;
+  align-items: center;
+    align-content: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 0;
+
+  .img-types-repas {
+    width: 200px;
+
+    img {
+      margin: 0;
+    }
+  }
+
+  .text-types-repas {
+    width: 300px;
+    align-items: center;
+    align-content: center;
+
+  }
+}
+
+@media only screen and (min-width: 1140px) {
+  mat-card {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    gap: 50px;
+    padding: 0;
+
+    .img-types-repas {
+      width: 200px;
+
+      img {
+        margin: 0;
+      }
+    }
+
+    .text-types-repas {
+      width: 300px;
+      align-items: center;
+      align-content: center;
+
+    }
+  }
+}
