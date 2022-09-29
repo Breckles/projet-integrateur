@@ -23,11 +23,11 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
-import { RecipesCardBlockComponent } from './components/recipes-card-block/recipes-card-block.component';
+import { RecipesHomePageDisplayComponent } from './components/recipe/recipes-home-page-display/recipes-home-page-display.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TypesRepasArticleBlockComponent } from './components/types-repas-article-block/types-repas-article-block.component';
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
-import { RecipesArticleCardComponent } from './components/recipes-card-block/recipes-article-card/recipes-article-card.component';
+import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { DateadComponent } from './components/datead/datead.component';
 import { AddRecipeButtonComponent } from './components/recipe/add-recipe-button/add-recipe-button.component';
 import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
@@ -86,10 +86,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     WeekblockComponent,
     DateadComponent,
     FooterComponent,
-    RecipesCardBlockComponent,
+    RecipesHomePageDisplayComponent,
     RecipeCreateComponent,
     AddRecipeButtonComponent,
-    RecipesArticleCardComponent,
+    RecipeCardComponent,
     TypesRepasArticleBlockComponent,
     CalendarBlockComponent,
     RecipesPageComponent,

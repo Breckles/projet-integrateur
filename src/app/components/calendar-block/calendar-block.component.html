@@ -26,7 +26,7 @@
   <!-- Etape 2 - la Day/Week -->
   <mat-grid-tile class="week-grid" [colspan]="dayWeekTileColSpan" [rowspan]="dayWeekTileRowSpan"> 2
     <mat-list-item *ngFor="let recipe of recipes">
-      <app-recipes-article-card [recipe]="recipe"></app-recipes-article-card>
+      <app-recipe-card [recipe]="recipe"></app-recipe-card>
     </mat-list-item>
   </mat-grid-tile>
 
