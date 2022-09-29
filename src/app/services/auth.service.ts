@@ -33,7 +33,7 @@ export class AuthService {
         this.firebaseUser = user;
         await this.login();
       } else {
-        this.logout();
+        // this.logout();
       }
     });
   }
@@ -64,6 +64,7 @@ export class AuthService {
   }
 
   logout() {
+    this.auth.signOut();
     this._appUser = undefined;
     this.appUser.next(this._appUser);
     this.router.navigate(['/home']);
