@@ -1,6 +1,6 @@
 import { Repas } from "./repas";
 
-export interface MenuJour {
+export interface IMenuJour {
 id: string;
 menuSemaineId: string;
 journee: JourneeSemaine;

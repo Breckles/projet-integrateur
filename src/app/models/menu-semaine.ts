@@ -1,9 +1,9 @@
-import { MenuJour } from "./menu-jour";
+import {IMenuJour } from "./menu-jour";
 
 
-export interface MenuSemaine {
+export interface IMenuSemaine {
     id: string;
     uid: string;
     debutSemaine: Date;
-    menuJours: MenuJour[];
+    menuJours: IMenuJour[];
 }
