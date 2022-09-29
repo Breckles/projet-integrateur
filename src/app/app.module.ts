@@ -59,6 +59,7 @@ import { TypeBtnBlockComponent } from './components/type-btn-block/type-btn-bloc
 import { TypeRepasBlockComponent } from './components/type-repas-block/type-repas-block.component';
 import { TypeRepasBtnBlockComponent } from './components/type-repas-btn-block/type-repas-btn-block.component';
 import { TypeRepasBtnComponent } from './components/type-repas-block/type-repas-btn/type-repas-btn.component';
+import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -98,6 +99,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     TypeRepasBlockComponent,
     TypeRepasBtnBlockComponent,
     TypeRepasBtnComponent,
+    TypesRepasBlockComponent,
   ],
   imports: [
     BrowserModule,
