@@ -17,4 +17,10 @@ export class RecipesArticleCardComponent implements OnInit {
       throw new Error('You need to provide a recipe for this component');
     }
   }
+
+/*   addThisRecipe(recipe:IRecette){
+console.log(recipe);
+localStorage.setItem('localStorage', JSON.stringify(recipe));
+}
+ */
 }

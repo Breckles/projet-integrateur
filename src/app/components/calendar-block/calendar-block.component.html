@@ -1,4 +1,5 @@
-<mat-grid-list id="grid-mobile" [cols]="gridCols" rowHeight="2:4" gutterSize="10px">
+<mat-grid-list id="grid-mobile" [cols]="gridCols" rowHeight="2:1" gutterSize="10px">
+
   <!-- Etape 1 - Calendrier -->
   <mat-grid-tile [colspan]="calendarTileColSpan" [rowspan]="calendarTileRowSpan">
     <div class="calendar-grid">
@@ -10,26 +11,31 @@
       </mat-calendar>
     </div>
   </mat-grid-tile>
+
+  <!-- Etape 4 - Menu result -->
+  <mat-grid-tile class="menu-grid" [colspan]="menuTileColSpan" [rowspan]="menuTileRowSpan">
+    <mat-card class="example-card">
+      <mat-card-title-group>
+        <mat-card-title>
+          <app-type-repas-block></app-type-repas-block>
+        </mat-card-title>
+      </mat-card-title-group>
+    </mat-card>
+  </mat-grid-tile>
+
+  <!-- Etape 2 - la Day/Week -->
+  <mat-grid-tile class="week-grid" [colspan]="dayWeekTileColSpan" [rowspan]="dayWeekTileRowSpan"> 2
+    <mat-list-item *ngFor="let recipe of recipes">
+      <app-recipes-article-card [recipe]="recipe"></app-recipes-article-card>
+    </mat-list-item>
+  </mat-grid-tile>
+
   <!-- Etape 3 - Button ajouter recipes -->
-  <mat-grid-tile class="button-grid"
-  [colspan]="addRecipeBtnTileColSpan" 
-  [rowspan]="addRecipeBtnTileRowSpan">
+  <mat-grid-tile class="button-grid" [colspan]="addRecipeBtnTileColSpan" [rowspan]="addRecipeBtnTileRowSpan">
     <div>
       <p>{{selected | json}}</p>
       <app-add-recipe-button></app-add-recipe-button>
     </div>
   </mat-grid-tile>
-  <!-- Etape 2 - la Day/Week -->
-  <mat-grid-tile class="week-grid"
-  [colspan]="dayWeekTileColSpan" 
-  [rowspan]="dayWeekTileRowSpan"> 2
-  <mat-list-item *ngFor="let recipe of recipes">
-    <app-recipes-article-card [recipe]="recipe"></app-recipes-article-card>
-  </mat-list-item>
-  </mat-grid-tile>
-  
- <!-- Etape 4 - Menu result -->
-  <mat-grid-tile class="menu-grid"
-  [colspan]="menuTileColSpan" 
-  [rowspan]="menuTileRowSpan"> 4 </mat-grid-tile>
+
 </mat-grid-list>

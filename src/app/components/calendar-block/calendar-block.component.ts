@@ -1,5 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { IRecette } from 'models/recipe.model';
+import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { IRecette, TypeRecette } from 'models/recipe.model';
 import { RecipeService } from 'services/recipe.service';
 
 @Component({
@@ -11,6 +11,8 @@ export class CalendarBlockComponent implements OnInit {
   panelOpenState = false;
   selected = new Date();
   recipes: IRecette[] = [];
+
+  @Input() recipe!: IRecette;
 
 //size for mobile
   gridCols = 1;
@@ -67,14 +69,14 @@ export class CalendarBlockComponent implements OnInit {
       this.menuTileRowSpan = 1;
     } else {
       //size for desktop
-      this.gridCols = 4;
+      this.gridCols = 2;
 
       // step 1 - Calendar grid tile
-      this.calendarTileColSpan = 3;
-      this.calendarTileRowSpan = 1;
+      this.calendarTileColSpan = 1;
+      this.calendarTileRowSpan = 3;
 
       // step 2 - Day/Week grid tile
-      this.dayWeekTileColSpan = 2;
+      this.dayWeekTileColSpan = 1;
       this.dayWeekTileRowSpan = 1;
 
       // step 3 - 'Add recipe button' grid tile
@@ -82,7 +84,7 @@ export class CalendarBlockComponent implements OnInit {
       this.addRecipeBtnTileRowSpan = 1;
 
       // step 4 - Menu Result grid tile
-      this.menuTileColSpan = 2;
+      this.menuTileColSpan = 1;
       this.menuTileRowSpan = 1;
     }
   }
