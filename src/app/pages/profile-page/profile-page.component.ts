@@ -11,7 +11,7 @@ import { IUser } from 'models/user.model';
   styleUrls: ['./profile-page.component.scss'],
 })
 export class ProfilePageComponent implements OnInit, OnDestroy {
-  private user: IUser | undefined;
+  user: IUser | undefined;
   private userSubscription: Subscription | null = null;
 
   constructor(private auth: AuthService) {}
