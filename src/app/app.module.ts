@@ -34,10 +34,10 @@ import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { TypeBtnBlockComponent } from './components/type-btn-block/type-btn-block.component';
-import { TypeRepasBlockComponent } from './components/type-repas-block/type-repas-block.component';
+import { RepasHomePageFilterComponent } from './components/repas-home-page-filter/repas-home-page-filter.component';
+import { RepasHomePageCardComponent } from './components/repas-home-page-card/repas-home-page-card.component';
 import { TypeRepasBtnBlockComponent } from './components/type-repas-btn-block/type-repas-btn-block.component';
-import { TypeRepasBtnComponent } from './components/type-repas-block/type-repas-btn/type-repas-btn.component';
+import { RepasHomePageButtonComponent } from './components/repas-home-page-card/repas-home-page-button/repas-home-page-button.component';
 import { TypesRepasBlockComponent } from './components/types-repas-block/types-repas-block.component';
 import { RepasComponent } from './components/repas/repas.component';
 import { AddRepasButtonComponent } from './components/repas/add-repas-button/add-repas-button.component';
@@ -96,10 +96,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AdminPageComponent,
     RepasComponent,
     AddRepasButtonComponent,
-    TypeBtnBlockComponent,
-    TypeRepasBlockComponent,
+    RepasHomePageFilterComponent,
+    RepasHomePageCardComponent,
     TypeRepasBtnBlockComponent,
-    TypeRepasBtnComponent,
+    RepasHomePageButtonComponent,
     TypesRepasBlockComponent,
   ],
   imports: [

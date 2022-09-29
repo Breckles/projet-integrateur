@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IRecette, TypeRecette } from 'models/recipe.model';
 
 @Component({
-  selector: 'app-type-repas-block',
-  templateUrl: './type-repas-block.component.html',
-  styleUrls: ['./type-repas-block.component.scss']
+  selector: 'app-repas-home-page-card',
+  templateUrl: './repas-home-page-card.component.html',
+  styleUrls: ['./repas-home-page-card.component.scss']
 })
-export class TypeRepasBlockComponent implements OnInit {
+export class RepasHomePageCardComponent implements OnInit {
   recipes: IRecette[] = [];
   @Input() recipe!: IRecette;
   
