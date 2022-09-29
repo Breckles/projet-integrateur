@@ -3,11 +3,11 @@ import { IRecette } from 'models/recipe.model';
 import { RecipeService } from 'services/recipe.service';
 
 @Component({
-  selector: 'app-recipes-card-block',
-  templateUrl: './recipes-card-block.component.html',
-  styleUrls: ['./recipes-card-block.component.scss'],
+  selector: 'app-recipes-home-page-display',
+  templateUrl: './recipes-home-page-display.component.html',
+  styleUrls: ['./recipes-home-page-display.component.scss'],
 })
-export class RecipesCardBlockComponent implements OnInit {
+export class RecipesHomePageDisplayComponent implements OnInit {
   recipes: IRecette[] = [];
 
   constructor(private recipeService: RecipeService) {}

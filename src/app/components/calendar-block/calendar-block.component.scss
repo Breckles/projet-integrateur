@@ -8,15 +8,9 @@ mat-grid-tile{
 
 .calendar-grid{
   box-sizing: content-box;
-  width: 100%;
+  width: 70%;
 }
-
-
-/******** DESKTOP >= 1140PX *********/
-@media screen and (min-width: 1140px) {
-  mat-grid-list>mat-grid-tile{
-    
-    
-  }
+mat-grid-tile.week-grid{
+  overflow: scroll;
 }
 
