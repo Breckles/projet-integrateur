@@ -52,6 +52,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { RepasComponent } from './components/repas/repas.component';
+import { AddRepasButtonComponent } from './components/repas/add-repas-button/add-repas-button.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -87,6 +89,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RecipesPageComponent,
     ProfilePageComponent,
     AdminPageComponent,
+    RepasComponent,
+    AddRepasButtonComponent,
   ],
   imports: [
     BrowserModule,

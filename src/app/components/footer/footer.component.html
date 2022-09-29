@@ -2,8 +2,8 @@
 <mat-toolbar>
     <span>Recettes </span>
     <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
-    <a mat-button routerLink="/menu" routerLinkActive="active">Mon profil</a>
-    <a mat-button routerLink="/home" routerLinkActive="active">Recettes</a>
+    <a mat-button routerLink="/profil" routerLinkActive="active">Mon profil</a>
+    <a mat-button routerLink="/recipes" routerLinkActive="active">Recettes</a>
     <a mat-button routerLink="/home" routerLinkActive="active">Types de repas</a>
 </mat-toolbar>
 </footer>
@@ -11,7 +11,7 @@
     <mat-accordion>
         <mat-expansion-panel (opened)="setStep(0)" hideToggle="false">
             <mat-expansion-panel-header>
-                <mat-panel-title style="color: #ffffff">
+                <mat-panel-title >
                     À propos
                 </mat-panel-title>
                   <!--  <mat-icon>keyboard_arrow_down</mat-icon> -->
