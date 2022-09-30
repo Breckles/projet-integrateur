@@ -1,5 +1,12 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { IRecette } from 'models/recipe.model';
+import { ModalService } from 'services/modal.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -10,7 +17,13 @@ export class RecipeCardComponent implements OnInit {
   @Input()
   recipe!: IRecette;
 
-  constructor() {}
+  @Input()
+  showButton: boolean = true;
+
+  @ViewChild('modalContentTemplate')
+  modalContentTemplate!: TemplateRef<any>;
+
+  constructor(private ms: ModalService) {}
 
   ngOnInit(): void {
     if (!this.recipe) {
@@ -18,9 +31,7 @@ export class RecipeCardComponent implements OnInit {
     }
   }
 
-/*   addThisRecipe(recipe:IRecette){
-console.log(recipe);
-localStorage.setItem('localStorage', JSON.stringify(recipe));
-}
- */
+  onAddRecipe() {
+    this.ms.openModal(this.modalContentTemplate);
+  }
 }

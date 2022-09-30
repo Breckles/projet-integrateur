@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { IMenuJour } from 'models/menu-jour';
 import { IRecette } from 'models/recipe.model';
+import { MenuService } from 'services/menu.service';
 import { RecipeService } from 'services/recipe.service';
 
 @Component({
@@ -8,11 +10,29 @@ import { RecipeService } from 'services/recipe.service';
   styleUrls: ['./menu-page.component.scss'],
 })
 export class MenuPageComponent implements OnInit {
-  constructor(private recipeService: RecipeService) {}
+  dayRecipes: IRecette[] = [];
+  dateSelected: Date = new Date();
+
+  constructor(private recipeService: RecipeService, private ms: MenuService) {}
 
   ngOnInit(): void {
-    this.recipeService.recipes.subscribe((data: IRecette[]) => {
-      console.log(data);
+    this.ms.getMenuByDate(new Date()).then((menu) => {
+      if (!!menu) {
+        this.dayRecipes = menu.recettes;
+      } else {
+        this.dayRecipes = [];
+      }
+    });
+  }
+
+  onDateSelectedChange(newDate: Date) {
+    console.log('Selected date has changed: ' + newDate.toISOString());
+    this.ms.getMenuByDate(newDate).then((menu) => {
+      if (!!menu) {
+        this.dayRecipes = menu.recettes;
+      } else {
+        this.dayRecipes = [];
+      }
     });
   }
 }

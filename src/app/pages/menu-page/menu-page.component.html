@@ -1,9 +1,10 @@
-<div id="menu-container">
-  <app-calendar-block></app-calendar-block>
-  
-</div>
-
-<div id="menu-container-destop">
-  <app-calendar-block></app-calendar-block>
-  
-</div>
+<mat-card>
+  <mat-calendar [(selected)]="dateSelected"
+                (selectedChange)="onDateSelectedChange($event)"></mat-calendar>
+</mat-card>
+<mat-card>
+  <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
+                           [recipes]="dayRecipes"
+                           [showButton]="false"></app-recipe-list-display>
+  <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
+</mat-card>
