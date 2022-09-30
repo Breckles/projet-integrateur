@@ -1,0 +1,8 @@
+<div class="calendar-grid">
+    <mat-calendar class="inline-calendar-card" [(selected)]="selected">
+      [formGroup]="campaignTwo"
+      [rangePicker]="campaignTwoPicker"
+      [comparisonStart]="campaignOne.value.start"
+      [comparisonEnd]="campaignOne.value.end">
+    </mat-calendar>
+  </div>
