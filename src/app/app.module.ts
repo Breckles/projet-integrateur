@@ -25,7 +25,6 @@ import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
 import { RecipesHomePageDisplayComponent } from './components/recipe/recipes-home-page-display/recipes-home-page-display.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { RepasHomePageArticleComponent } from './components/repas/repas-home-page-article/repas-home-page-article.component';
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { DateadComponent } from './components/datead/datead.component';
@@ -34,9 +33,8 @@ import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-import { RepasHomePageFilterComponent } from './components/repas/repas-home-page-filter/repas-home-page-filter.component';
-import { RepasComponent } from './components/repas/repas.component';
-import { AddRepasButtonComponent } from './components/repas/add-repas-button/add-repas-button.component';
+
+import { AddToMenuButtonComponent } from './components/menu/add-to-menu-button/add-to-menu-button.component';
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
@@ -55,6 +53,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { MenuComponent } from './components/menu/menu.component';
+import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -85,14 +85,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RecipeCreateComponent,
     AddRecipeButtonComponent,
     RecipeCardComponent,
-    RepasHomePageArticleComponent,
     CalendarBlockComponent,
     RecipesPageComponent,
     ProfilePageComponent,
     AdminPageComponent,
-    RepasComponent,
-    AddRepasButtonComponent,
-    RepasHomePageFilterComponent,
+    AddToMenuButtonComponent,
+    MenuComponent,
+    CalendrierComponent,
   ],
   imports: [
     BrowserModule,
