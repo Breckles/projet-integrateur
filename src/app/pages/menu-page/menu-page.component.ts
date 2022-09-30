@@ -10,6 +10,8 @@ import { RecipeService } from 'services/recipe.service';
 export class MenuPageComponent implements OnInit {
   constructor(private recipeService: RecipeService) {}
 
+
+  
   ngOnInit(): void {
     this.recipeService.recipes.subscribe((data: IRecette[]) => {
       console.log(data);
