@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
+import { Component, HostListener, Input, OnInit, Output } from '@angular/core';
 import { IRecette, TypeRecette } from 'models/recipe.model';
 import { RecipeService } from 'services/recipe.service';
 
@@ -13,6 +13,8 @@ export class CalendarBlockComponent implements OnInit {
   recipes: IRecette[] = [];
 
   @Input() recipe!: IRecette;
+
+
 
 //size for mobile
   gridCols = 1;

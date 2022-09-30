@@ -3,7 +3,7 @@
   <!-- Etape 1 - Calendrier -->
   <mat-grid-tile [colspan]="calendarTileColSpan" [rowspan]="calendarTileRowSpan">
     <div class="calendar-grid">
-      <mat-calendar class="inline-calendar-card" [(selected)]="selected">
+      <mat-calendar class="inline-calendar-card" (selected)="selected">
         [formGroup]="campaignTwo"
         [rangePicker]="campaignTwoPicker"
         [comparisonStart]="campaignOne.value.start"
