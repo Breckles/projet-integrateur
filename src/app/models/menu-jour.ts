@@ -1,18 +1,8 @@
-import { Repas } from "./repas";
+import { IRecette } from "./recipe.model";
 
 export interface IMenuJour {
 id: string;
-menuSemaineId: string;
-journee: JourneeSemaine;
-repas: Repas[];
-}
-
-export enum JourneeSemaine {
-    DIMANCHE,
-    LUNDI,
-    MARDI,
-    MERCREDI,
-    JEUDI,
-    VENDREDI,
-    SAMEDI
+uid: string;
+journee: Date;
+recettes: IRecette[];
 }
