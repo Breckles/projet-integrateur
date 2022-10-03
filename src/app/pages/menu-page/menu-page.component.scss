@@ -1,37 +1,21 @@
-/******** MOBILE >= 375PX *********/
-#menu-container {
+:host {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  height: 400px;
-  padding: 25px;
-  
+  width: 100%;
+  height: 100%;
 }
 
-#menu-grid{
-width: 100%;
-}
-
-#menu-container-destop{
-  display:none;
+.mat-card {
+  flex: 1;
 }
 
 
-/******** DESKTOP >= 1140PX *********/
-@media screen and (min-width: 1140px) {
- #menu-container{
-  display:none;
- }
+@media screen and (min-width: 650px) {
+  :host {
+    flex-direction: row;
+  }
 
- #menu-container-destop{
-  display: unset;
-  //display: flex;
-  flex-direction: column;
-  gap: 16px;
-  //height: 100%;
-  padding: 25px;
-    margin: 0 auto;
-
- }
-
+  .mat-card {
+    max-width: 50%;
+  }
 }

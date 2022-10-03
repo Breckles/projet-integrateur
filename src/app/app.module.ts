@@ -23,7 +23,7 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { AuthComponent } from './components/auth/auth.component';
 import { HeaderComponent } from './components/header/header.component';
 import { WeekblockComponent } from './components/weekblock/weekblock.component';
-import { RecipesHomePageDisplayComponent } from './components/recipe/recipes-home-page-display/recipes-home-page-display.component';
+import { RecipeListDisplayComponent } from './components/recipe/recipe-list-display/recipe-list-display.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CalendarBlockComponent } from './components/calendar-block/calendar-block.component';
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
@@ -55,6 +55,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MenuComponent } from './components/menu/menu.component';
 import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
+import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -81,7 +82,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     WeekblockComponent,
     DateadComponent,
     FooterComponent,
-    RecipesHomePageDisplayComponent,
+    RecipeListDisplayComponent,
     RecipeCreateComponent,
     AddRecipeButtonComponent,
     RecipeCardComponent,
@@ -92,6 +93,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AddToMenuButtonComponent,
     MenuComponent,
     CalendrierComponent,
+    AddRecipeToMenuModalContentComponent,
   ],
   imports: [
     BrowserModule,

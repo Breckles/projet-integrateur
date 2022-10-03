@@ -1,38 +1,17 @@
-/******** MOBILE >= 375PX *********/
-#home-container {
-  // border: 2px solid blue;
+:host,
+.nestedFlex {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  // height: 100%;
-  padding: 25px;
+  width: 100%;
+  height: 100%;
 }
 
-#home-container-desktop {
-  display: none; 
-}
+@media screen and (min-width: 650px) {
+  .nestedFlex {
+    flex-direction: row;
 
-.recipes-block,
-.repas-block,
-.week-block {
-  margin: 10px;
-}
-
-
-
-
-/******** DESKTOP >= 1140PX *********/
-@media screen and (min-width: 1140px) {
-  #home-container-desktop {
-    display: unset;
+    &>* {
+      width: 50%;
+    }
   }
-
-  #home-container {
-    display: none;
-  }
-
-.recipes-block{
-  align-items: center;
-}
-
 }
