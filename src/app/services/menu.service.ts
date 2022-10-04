@@ -6,7 +6,6 @@ import {
 
 import { IMenuJour } from 'models/menu-jour';
 import { IRecette } from 'models/recipe.model';
-import { IUser } from 'models/user.model';
 
 import { AuthService } from './auth.service';
 
@@ -14,25 +13,23 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class MenuService {
-  private appUser: IUser | undefined;
   private menuCollection: AngularFirestoreCollection<IMenuJour>;
 
   constructor(private afs: AngularFirestore, private auth: AuthService) {
     this.menuCollection = this.afs.collection<IMenuJour>('menu-jour');
-    this.auth.appUser.subscribe((user) => {
-      this.appUser = user;
-    });
   }
 
   //////////////////// CRUD ///////////////////////
 
   // C - Create
   async createMenu(date: Date, recettes: IRecette[]) {
-    const id = this.afs.createId();
-    if (!!this.appUser) {
+    const appUser = await this.auth.getUser();
+
+    if (appUser) {
+      const id = this.afs.createId();
       const newMenu: IMenuJour = {
         id,
-        uid: this.appUser?.uid,
+        uid: appUser.uid,
         journee: this.convertDate(date),
         recettes,
       };
@@ -43,9 +40,11 @@ export class MenuService {
 
   // R - Read
   async getMenuByDate(date: Date) {
-    if (!!this.appUser) {
+    const appUser = await this.auth.getUser();
+
+    if (appUser) {
       const result = await this.menuCollection.ref
-        .where('uid', '==', this.appUser.uid)
+        .where('uid', '==', appUser.uid)
         .where('journee', '==', this.convertDate(date))
         .get();
 
@@ -61,9 +60,11 @@ export class MenuService {
 
   // U - Update
   async updateMenu(menu: IMenuJour) {
-    if (!!this.appUser) {
+    const appUser = await this.auth.getUser();
+
+    if (appUser) {
       const result = await this.menuCollection.ref
-        .where('uid', '==', this.appUser.uid)
+        .where('uid', '==', appUser.uid)
         .where('journee', '==', menu.journee)
         .get();
 

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { firstValueFrom, Subject } from 'rxjs';
+import { firstValueFrom, Subject, take } from 'rxjs';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -31,14 +31,15 @@ export class AuthService {
     this.auth.user.subscribe(async (user) => {
       if (user) {
         this.firebaseUser = user;
-        await this.login();
+        await this.setAppUser();
       } else {
-        // this.logout();
+        this.unsetAppUser();
+        this.router.navigate(['/home']);
       }
     });
   }
 
-  async login() {
+  async setAppUser() {
     if (this.firebaseUser) {
       const registeredUser = await firstValueFrom(
         this.userCollection.doc(this.firebaseUser.uid).get()
@@ -60,14 +61,32 @@ export class AuthService {
         this._appUser = newUser;
       }
     }
-
     this.appUser.next(this._appUser);
+  }
+
+  private unsetAppUser() {
+    this._appUser = undefined;
+    window.localStorage.removeItem('appUser');
+    this.appUser.next(this._appUser);
+  }
+
+  async getUser() {
+    if (this._appUser) {
+      return { ...this._appUser };
+    }
+
+    const firebaseUser = await this.auth.currentUser;
+    if (firebaseUser) {
+      const response = await this.userCollection
+        .doc(firebaseUser.uid)
+        .ref.get();
+      return response.data();
+    }
+
+    return;
   }
 
   logout() {
     this.auth.signOut();
-    this._appUser = undefined;
-    this.appUser.next(this._appUser);
-    this.router.navigate(['/home']);
   }
 }
