@@ -1,4 +1,5 @@
-<mat-card class="recipes-card">
+<mat-card class="recipes-card"
+          (click)="onShowDetails()">
   <img [src]="recipe.image"
        [alt]="recipe.nom">
   <mat-card-content>
@@ -8,15 +9,18 @@
     <ng-container *ngIf="showButton">
       <button mat-button
               type="button"
-              (click)="onAddRecipe()">Ajouter a mon menu</button>
-      <ng-template #modalContentTemplate>
+              (click)="onAddRecipe($event)">Ajouter a mon menu</button>
+      <ng-template #addToMenuModalContent>
         <app-add-recipe-to-menu-modal-content [recipeToAdd]="recipe"></app-add-recipe-to-menu-modal-content>
       </ng-template>
     </ng-container>
+    <ng-template #recipeDetailModalContent>
+      <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>
+    </ng-template>
   </mat-card-content>
 </mat-card>
 
-<mat-card class="recipes-card__menu-page">
+<!-- <mat-card class="recipes-card__menu-page">
   <mat-card-title-group>
     <img mat-card-lg-image
          class="img-card"
@@ -26,4 +30,4 @@
   <mat-card-content>
     {{recipe.nom}}
   </mat-card-content>
-</mat-card>
+</mat-card> -->

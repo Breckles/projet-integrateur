@@ -4,12 +4,16 @@ import { AuthService } from 'services/auth.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-
-
 export class HeaderComponent implements OnInit {
+  constructor(private auth: AuthService) {}
+  ngOnInit(): void {}
+  logout() {
+    this.auth.logout();
+  }
 
+<<<<<<< HEAD
     constructor(private auth: AuthService) {}
     ngOnInit(): void {}  
     logout() {
@@ -17,8 +21,10 @@ export class HeaderComponent implements OnInit {
     }
 
    /* isShowDiv = false
+=======
+  /* isShowDiv = false
+>>>>>>> master
     menuToggle(){ 
       this.isShowDiv = !this.isShowDiv;
     }*/
-
 }

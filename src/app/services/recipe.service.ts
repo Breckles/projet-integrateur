@@ -37,4 +37,8 @@ export class RecipeService {
       this.recipeCollection.doc(recipe.id).set(recipe);
     }
   }
+
+  updateRecipe(recipe: IRecette) {
+    return this.recipeCollection.doc(recipe.id).set(recipe);
+  }
 }

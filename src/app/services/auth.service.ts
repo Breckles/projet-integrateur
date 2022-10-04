@@ -53,6 +53,7 @@ export class AuthService {
           nomAfficher: '',
           email: this.firebaseUser.email!,
           role: 'M',
+          actif: 1,
         };
 
         await this.userCollection.doc(newUser.uid).set(newUser);
