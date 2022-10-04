@@ -55,7 +55,7 @@ export class MenuService {
 
       return result.docs[0].data();
     } else {
-      throw new Error('No user is logged in.');
+      return null;
     }
   }
 
