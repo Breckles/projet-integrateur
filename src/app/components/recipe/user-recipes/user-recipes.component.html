@@ -1,1 +1,7 @@
-<p>user-recipes works!</p>
+<app-recipe-list-display *ngIf="userRecipes.length > 0; else noRecipes"
+                         [recipes]="userRecipes"
+                         [showModifyButton]="true"></app-recipe-list-display>
+
+<ng-template #noRecipes></ng-template>
+
+<app-add-recipe-button>Ajouter une recette</app-add-recipe-button>

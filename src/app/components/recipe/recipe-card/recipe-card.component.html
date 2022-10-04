@@ -6,7 +6,7 @@
     <p>
       {{recipe.nom}}
     </p>
-    <ng-container *ngIf="showButton">
+    <ng-container *ngIf="showAddToMenuButton">
       <button mat-button
               type="button"
               (click)="onAddRecipe($event)">Ajouter a mon menu</button>
@@ -14,9 +14,16 @@
         <app-add-recipe-to-menu-modal-content [recipeToAdd]="recipe"></app-add-recipe-to-menu-modal-content>
       </ng-template>
     </ng-container>
-    <ng-template #recipeDetailModalContent>
-      <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>
-    </ng-template>
+    <ng-container *ngIf="showModifyButton">
+      <button mat-icon-button
+              type="button"
+              (click)="onModifyRecipe($event)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <ng-template #modifyRecipeModalContent>
+        <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
+      </ng-template>
+    </ng-container>
   </mat-card-content>
 </mat-card>
 

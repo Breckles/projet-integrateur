@@ -5,6 +5,9 @@
 <mat-card>
   <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
                            [recipes]="dayRecipes"
-                           [showButton]="false"></app-recipe-list-display>
+                           [showAddToMenuButton]="false"></app-recipe-list-display>
   <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
+</mat-card>
+<mat-card>
+  <app-user-recipes></app-user-recipes>
 </mat-card>

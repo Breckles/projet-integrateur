@@ -5,6 +5,7 @@ import { IRecette, TypeRecette } from 'models/recipe.model';
 import { IIngredientRecette } from 'models/ingredient-recette.model';
 import { PoidMesure, Categorie } from 'models/article.model';
 import { RecipeService } from 'services/recipe.service';
+import { ModalService } from 'services/modal.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -17,9 +18,7 @@ export class RecipeFormComponent implements OnInit {
 
   recipeForm!: FormGroup;
 
-  ingredientFormList = new FormArray([]);
-
-  constructor(private recipeService: RecipeService) {}
+  constructor(private recipeService: RecipeService, private ms: ModalService) {}
 
   typeLabels = ['Entree', 'Plat Principale', 'Dessert', 'A cote', 'Autre'];
   poidMesureLabels = [
@@ -43,7 +42,7 @@ export class RecipeFormComponent implements OnInit {
   ];
 
   ngOnInit(): void {
-    this.onAddIngredient();
+    const ingredientFormList = new FormArray<any>([]);
 
     if (!this.recipeToModify) {
       this.recipeForm = new FormGroup({
@@ -57,14 +56,26 @@ export class RecipeFormComponent implements OnInit {
           Validators.required
         ),
         instructions: new FormControl<string>(''),
-        ingredients: this.ingredientFormList,
+        ingredients: ingredientFormList,
       });
     } else {
-      //todo
-      //create formarray for existing ingredients
-      // for (const ingredient of this.recipeToModify.ingredients) {
-      //   this.ingredientFormList.push(ingredient);
-      // }
+      for (const ingredient of this.recipeToModify.ingredients) {
+        ingredientFormList.push(
+          new FormGroup({
+            nom: new FormControl<string>(ingredient.nom, Validators.required),
+            preparation: new FormControl<string>(ingredient.preparation),
+            quantite: new FormControl<number>(ingredient.quantite),
+            unites: new FormControl<number>(
+              ingredient.unites,
+              Validators.required
+            ),
+            categorie: new FormControl<number>(
+              ingredient.categorie,
+              Validators.required
+            ),
+          })
+        );
+      }
 
       this.recipeForm = new FormGroup({
         nom: new FormControl<string>(
@@ -89,7 +100,7 @@ export class RecipeFormComponent implements OnInit {
           Validators.required
         ),
         instructions: new FormControl<string>(this.recipeToModify.instructions),
-        ingredients: this.ingredientFormList,
+        ingredients: ingredientFormList,
       });
     }
   }
@@ -146,6 +157,6 @@ export class RecipeFormComponent implements OnInit {
       }
     }
 
-    // this.recipeService.createRecipe(recipe);
+    this.ms.closeModal();
   }
 }
