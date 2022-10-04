@@ -29,7 +29,7 @@ import { CalendarBlockComponent } from './components/calendar-block/calendar-blo
 import { RecipeCardComponent } from './components/recipe/recipe-card/recipe-card.component';
 import { DateadComponent } from './components/datead/datead.component';
 import { AddRecipeButtonComponent } from './components/recipe/add-recipe-button/add-recipe-button.component';
-import { RecipeCreateComponent } from './components/recipe/recipe-create/recipe-create.component';
+import { RecipeFormComponent } from './components/recipe/recipe-form/recipe-form.component';
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
@@ -53,9 +53,11 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MenuComponent } from './components/menu/menu.component';
 import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
 import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
+import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -83,7 +85,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     DateadComponent,
     FooterComponent,
     RecipeListDisplayComponent,
-    RecipeCreateComponent,
+    RecipeFormComponent,
     AddRecipeButtonComponent,
     RecipeCardComponent,
     CalendarBlockComponent,
@@ -94,6 +96,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MenuComponent,
     CalendrierComponent,
     AddRecipeToMenuModalContentComponent,
+    RecipeDetailModalContentComponent,
   ],
   imports: [
     BrowserModule,
@@ -120,6 +123,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatNativeDateModule,
     MatExpansionModule,
     MatTableModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

@@ -3,4 +3,5 @@ export interface IUser {
   nomAfficher: string;
   email: string;
   role: string;
+  actif: number;
 }

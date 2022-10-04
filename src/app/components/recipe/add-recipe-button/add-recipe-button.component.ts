@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalService } from 'services/modal.service';
-import { RecipeCreateComponent } from '../recipe-create/recipe-create.component';
+import { RecipeFormComponent } from '../recipe-form/recipe-form.component';
 
 @Component({
   selector: 'app-add-recipe-button',
@@ -13,6 +13,6 @@ export class AddRecipeButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   openModal() {
-    this.modalService.openModal(RecipeCreateComponent);
+    this.modalService.openModal(RecipeFormComponent);
   }
 }

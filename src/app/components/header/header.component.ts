@@ -1,24 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'services/auth.service';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  styleUrls: ['./header.component.scss'],
 })
-
-
 export class HeaderComponent implements OnInit {
+  constructor(private auth: AuthService) {}
+  ngOnInit(): void {}
+  logout() {
+    this.auth.logout();
+  }
 
-    constructor(private auth: AngularFireAuth) {}
-    ngOnInit(): void {}  
-    logout() {
-      this.auth.signOut();
-    }
-
-   /* isShowDiv = false
+  /* isShowDiv = false
     menuToggle(){ 
       this.isShowDiv = !this.isShowDiv;
     }*/
-
 }

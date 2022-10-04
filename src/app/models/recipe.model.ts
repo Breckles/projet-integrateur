@@ -20,5 +20,5 @@ export interface IRecette {
   tempCuisson: number;
   instructions: string;
   ingredients: IIngredientRecette[];
-  typeRecette: TypeRecette[];
+  typeRecette: TypeRecette;
 }
