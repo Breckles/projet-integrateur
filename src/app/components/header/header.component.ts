@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AuthService } from 'services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,10 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 export class HeaderComponent implements OnInit {
 
-    constructor(private auth: AngularFireAuth) {}
+    constructor(private auth: AuthService) {}
     ngOnInit(): void {}  
     logout() {
-      this.auth.signOut();
+      this.auth.logout();
     }
 
    /* isShowDiv = false

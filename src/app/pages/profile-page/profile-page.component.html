@@ -1,6 +1,36 @@
 <div *ngIf="user">
-  user is logged in
+  <mat-card id="FormProfile">
+    <mat-card-header>
+      <mat-card-title>Profile Information</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="user-image">
+        <img 
+        width="120" 
+        height="120" 
+        src="https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/download.png?alt=media&token=69716606-c841-4878-b6fd-a074521d4086" 
+        alt="{{user.nomAfficher}}">
+         <!-- <button ma-mini-fab (click)="inputField.click()"
+          (click)="inputField"></button> -->
+      </div>
+      <div class="user-profile">
+        <p>{{user.nomAfficher}}</p>
+        <mat-form-field appearance="legacy" class="user-info">
+          <div class="user-info">
+            <input
+            matInput
+            placeholder="nouveau nom affichage">
+          </div>
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+
+  </mat-card>
+
+
+
 </div>
 <div *ngIf="!user">
-  user is logged out
+  <p>Connectez-vous afin voir votre menu </p>
+  <button mat-button></button>
 </div>
