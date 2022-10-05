@@ -1,4 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {  
+  Component,
+  Input,
+  OnInit,
+  TemplateRef,
+  ViewChild} from '@angular/core';
+import {IIngredientRecette} from 'models/ingredient-recette.model';
 import { IRecette } from 'models/recipe.model';
 import { ModalService } from 'services/modal.service';
 
@@ -11,6 +17,11 @@ export class RecipeDetailModalContentComponent implements OnInit {
   @Input()
   recipeToShow!: IRecette;
 
+  @Input()
+  showButton: boolean = true;
+
+  @ViewChild('addToMenuModalContent')
+  addToMenuModalContent!: TemplateRef<any>;
   constructor(private ms: ModalService) {}
 
   ngOnInit(): void {
@@ -20,7 +31,10 @@ export class RecipeDetailModalContentComponent implements OnInit {
       );
     }
   }
-
+  onAddRecipe(e: Event) {
+    e.stopPropagation();
+    this.ms.openModal(this.addToMenuModalContent);
+  }
   closeModal() {
     this.ms.closeModal();
   }
