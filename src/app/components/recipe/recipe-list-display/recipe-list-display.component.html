@@ -1,4 +1,5 @@
 <mat-grid-list [cols]="columns"
+               [rowHeight]="rowHeight"
                gutterSize="10px">
   <mat-grid-tile *ngFor="let recipe of recipes">
     <app-recipe-card [recipe]="recipe"

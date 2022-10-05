@@ -11,7 +11,7 @@ export class HomePageComponent implements OnInit {
   recettesVedettes: IRecette[] = [];
 
   gridColSizes = {
-    small: 1,
+    small: 2,
     medium: 3,
     large: 5,
   };

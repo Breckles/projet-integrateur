@@ -15,12 +15,12 @@ export class MenuPageComponent implements OnInit {
   dateSelected: Date = new Date();
 
   menuRecipesGridColSizes = {
-    small: 1,
+    small: 2,
     medium: 3,
-    large: 5,
+    large: 3,
   };
   userRecipesGridColSizes = {
-    small: 1,
+    small: 2,
     medium: 3,
     large: 6,
   };
@@ -34,7 +34,6 @@ export class MenuPageComponent implements OnInit {
     this.ms.getMenuByDate(new Date()).then((menu) => {
       if (!!menu) {
         this.dayRecipes = menu.recettes;
-        this.menuRecipesGridColSizes.small = menu.recettes.length;
         this.onResize();
       } else {
         this.dayRecipes = [];
@@ -44,7 +43,6 @@ export class MenuPageComponent implements OnInit {
     this.recipeService.getUserRecipes().then((recipes) => {
       if (!!recipes) {
         this.userRecipes = recipes;
-        this.userRecipesGridColSizes.small = recipes.length;
         this.onResize();
       } else {
         this.userRecipes = [];

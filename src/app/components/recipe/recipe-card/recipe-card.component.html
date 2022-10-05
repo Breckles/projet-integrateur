@@ -3,7 +3,7 @@
   <img mat-card-image
        [src]="recipe.image"
        [alt]="recipe.nom">
-  <mat-card-title>{{recipe.nom}}</mat-card-title>
+  <mat-card-content>{{recipe.nom}}</mat-card-content>
   <mat-card-actions *ngIf="showAddToMenuButton || showModifyButton">
     <ng-container *ngIf="showAddToMenuButton">
       <button mat-icon-button
@@ -25,8 +25,8 @@
         <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
       </ng-template>
     </ng-container>
-    <ng-template #recipeDetailModalContent>
-      <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>
-    </ng-template>
   </mat-card-actions>
+  <ng-template #recipeDetailModalContent>
+    <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>
+  </ng-template>
 </mat-card>

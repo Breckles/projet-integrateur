@@ -22,6 +22,8 @@ export class RecipeListDisplayComponent implements OnInit, OnChanges {
 
   @Input()
   columns!: number;
+  @Input()
+  rowHeight: string | number = '1:1';
 
   gridCols!: number;
 
@@ -41,11 +43,12 @@ export class RecipeListDisplayComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('in ngOnChanges');
-    console.log(changes['columns']);
-
     if (changes['columns']) {
       this.columns = changes['columns'].currentValue;
+    }
+
+    if (changes['rowHeight']) {
+      this.rowHeight = changes['rowHeight'].currentValue;
     }
   }
 }
