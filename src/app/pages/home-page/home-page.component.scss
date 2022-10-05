@@ -6,6 +6,16 @@
   height: 100%;
 }
 
+app-recipe-list-display {
+  display: flex;
+  flex-wrap: wrap;
+
+  mat-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
 @media screen and (min-width: 650px) {
   .nestedFlex {
     flex-direction: row;
