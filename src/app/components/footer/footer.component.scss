@@ -16,8 +16,12 @@
   .footer__desktop {
     display: none;
   }
-
   .footer__mobile {
+    width: 100%;
+    right: 0;
+    left: 0;
+    bottom:0;
+   position: fixed;
     background-color: #333333;
   }
 
@@ -33,9 +37,6 @@
     color: #ffffff !important;
   }
 
-  /* .disable_ripple{
-    background: currentColor !important;
-    } */
 
   // quick and dirty hack for touch devices running chrome
   @media (hover: none) {

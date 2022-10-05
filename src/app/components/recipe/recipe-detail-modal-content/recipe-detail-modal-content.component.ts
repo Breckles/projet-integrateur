@@ -22,6 +22,27 @@ export class RecipeDetailModalContentComponent implements OnInit {
 
   @ViewChild('addToMenuModalContent')
   addToMenuModalContent!: TemplateRef<any>;
+  poidMesureLabels = [
+    'g',
+    'kg',
+    'ml',
+    'l',
+    'unite',
+    'tasse',
+    'c. the',
+    'c. soupe',
+  ];
+  categorieLabels = [
+    'Fruits et Legumes',
+    'Viande',
+    'Charcuterie',
+    'Produits Laitiers',
+    'Boulangerie',
+    'Collation',
+    'Autre',
+  ];
+
+
   constructor(private ms: ModalService) {}
 
   ngOnInit(): void {
