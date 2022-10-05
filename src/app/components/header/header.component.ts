@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { AuthService } from 'services/auth.service';
-import {MatSidenav} from 'angular/material/sidenav'
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -8,8 +8,8 @@ import {MatSidenav} from 'angular/material/sidenav'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild(MatSidenav)
-  sidenav!: MatSidenav;
+  @ViewChild(MatSidenavModule)
+  sidenav!: MatSidenavModule;
   
   constructor(private auth: AuthService) {}
   ngOnInit(): void {}
