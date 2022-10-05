@@ -59,6 +59,7 @@ import { CalendrierComponent } from './components/menu/calendrier/calendrier.com
 import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
 import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
 import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
+import { BannerHomePageComponent } from './components/banner-home-page/banner-home-page.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -99,6 +100,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AddRecipeToMenuModalContentComponent,
     RecipeDetailModalContentComponent,
     UserRecipesComponent,
+    BannerHomePageComponent,
   ],
   imports: [
     BrowserModule,
