@@ -1,9 +1,12 @@
-:host {
+:host,
+.menuSection {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   width: 100%;
   height: 100%;
 }
+
 
 .mat-card {
   flex: 1;
@@ -11,11 +14,11 @@
 
 
 @media screen and (min-width: 650px) {
-  :host {
+  .menuSection {
     flex-direction: row;
   }
 
-  .mat-card {
-    max-width: 50%;
+  .userRecipesSection {
+    width: 100%;
   }
 }

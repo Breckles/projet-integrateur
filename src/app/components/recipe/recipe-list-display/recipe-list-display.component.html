@@ -1,7 +1,8 @@
-<mat-list>
-  <mat-list-item *ngFor="let recipe of recipes">
+<mat-grid-list [cols]="columns"
+               gutterSize="10px">
+  <mat-grid-tile *ngFor="let recipe of recipes">
     <app-recipe-card [recipe]="recipe"
                      [showAddToMenuButton]="showAddToMenuButton"
                      [showModifyButton]="showModifyButton"></app-recipe-card>
-  </mat-list-item>
-</mat-list>
+  </mat-grid-tile>
+</mat-grid-list>
