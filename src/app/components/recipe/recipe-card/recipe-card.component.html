@@ -22,6 +22,9 @@
         <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
       </ng-template>
     </ng-container>
+    <ng-template #recipeDetailModalContent>
+      <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>
+    </ng-template>
   </mat-card-content>
 </mat-card>
 
