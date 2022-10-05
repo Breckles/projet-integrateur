@@ -7,7 +7,14 @@
 
 .recipes-card:hover {
   cursor: pointer;
+  -webkit-transform: scale(1.03);
+  transform: scale(1.03);
 }
+.recipes-card{
+-webkit-transform: scale(1);
+	transform: scale(1);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out; }
 
 .recipes-card__menu-page {
   display: none;

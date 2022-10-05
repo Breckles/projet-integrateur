@@ -4,8 +4,8 @@ export interface IIngredientRecette {
   nom: string;
   preparation: string;
   quantite: number;
-  unites: PoidMesure;
-  categorie: Categorie;
+  unites: number;
+  categorie: number;
 }
 
 export default IIngredientRecette;

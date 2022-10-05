@@ -18,12 +18,16 @@ export class RecipeCardComponent implements OnInit {
   recipe!: IRecette;
 
   @Input()
-  showButton: boolean = true;
+  showAddToMenuButton: boolean = true;
+  @Input()
+  showModifyButton: boolean = false;
 
   @ViewChild('addToMenuModalContent')
   addToMenuModalContent!: TemplateRef<any>;
   @ViewChild('recipeDetailModalContent')
   recipeDetailModalContent!: TemplateRef<any>;
+  @ViewChild('modifyRecipeModalContent')
+  modifyRecipeModalContent!: TemplateRef<any>;
 
   constructor(private ms: ModalService) {}
 
@@ -42,5 +46,10 @@ export class RecipeCardComponent implements OnInit {
     console.log(this.recipeDetailModalContent);
 
     this.ms.openModal(this.recipeDetailModalContent);
+  }
+
+  onModifyRecipe(e: Event) {
+    e.stopPropagation();
+    this.ms.openModal(this.modifyRecipeModalContent);
   }
 }

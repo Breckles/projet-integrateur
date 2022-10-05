@@ -13,4 +13,10 @@ $my-app-theme: mat.define-light-theme(
       warn: $my-app-warn,
     ),
   )
+<<<<<<< HEAD
 );
+=======
+);
+
+@include mat.all-component-themes($my-app-theme);
+>>>>>>> master

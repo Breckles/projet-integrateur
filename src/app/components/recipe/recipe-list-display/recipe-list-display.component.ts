@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { IRecette } from 'models/recipe.model';
-import { RecipeService } from 'services/recipe.service';
 
 @Component({
   selector: 'app-recipe-list-display',
@@ -12,7 +11,9 @@ export class RecipeListDisplayComponent implements OnInit {
   recipes: IRecette[] = [];
 
   @Input()
-  showButton: boolean = true;
+  showAddToMenuButton: boolean = true;
+  @Input()
+  showModifyButton: boolean = false;
 
   constructor() {}
 
