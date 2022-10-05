@@ -1,9 +1,19 @@
-#header-nav>.nav-list-desktop{
-display: none;
+.nav-container{
+    width: 500px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    flex: 1;
+    mat-sidenav{
+        width: 150px;
+
+    }
 }
 
 
 
+
+#header-nav>.nav-list-desktop{
+display: none;
+}
 /******** DESKTOP >= 1140PX *********/
  @media screen and (min-width: 1140px) {
 #header-nav>.nav-list-desktop{

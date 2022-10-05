@@ -1,6 +1,19 @@
+$light-power: #f9f9fc;
+
 .banner-home-card{
-   background-image: url(https://material.angular.io/assets/img/examples/shiba2.jpg);
-    background-repeat: no-repeat;
-    
-   
-  }
+    background:no-repeat url(https://material.angular.io/assets/img/examples/shiba2.jpg);
+    background-size: cover;
+    max-width: auto;
+    max-height: auto;
+    margin-bottom: 8px;
+    color: $light-power;
+}
+
+/******** DESKTOP >= 1140PX *********/
+@media screen and (min-width: 1140px) {
+.banner-home-card{
+    max-height:600px;
+}
+
+
+}

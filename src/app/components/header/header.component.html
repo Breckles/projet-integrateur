@@ -1,12 +1,20 @@
 <header id="header-nav">
-  <mat-toolbar class="nav-menu" color="primary">
-    <mat-icon button mat-button [matMenuTriggerFor]="menu">menu</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
-      <button mat-menu-item class="nav-item"><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
-      <button class="nav-item__logout" (click)="logout()">Logout</button>
-    </mat-menu>
-  </mat-toolbar>
+  <mat-sidenav-container class="nav-container">
+    <mat-icon class="nav-menu-btn" button mat-button (click)="sidenav.toggle()">menu</mat-icon>
+    <mat-sidenav #sidenav mode="over" class="nav-content" opened>
+      <mat-nav-list>
+        <mat-list-item button mat-raised-button class="nav-item">
+          <a routerLink="/home" routerLinkActive="active">Home</a>
+        </mat-list-item>
+        <mat-list-item button mat-raised-button class="nav-item">
+          <a routerLink="/menu" routerLinkActive="active">Menu</a>
+        </mat-list-item>
+        <mat-list-item button class="nav-item__logout" (click)="logout()">Logout</mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+  </mat-sidenav-container>
+
+
 
   <mat-nav-list class="nav-list-desktop">
     <mat-toolbar>
@@ -14,11 +22,6 @@
       <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
       <button class="nav-item "><a routerLink="/recipes" routerLinkActive="active">Recette</a></button>
       <button class="nav-item "><a routerLink="/profile" routerLinkActive="active">Profile</a></button>
-
-   <!--    <mat-form-field appearance="outline">
-        <input matInput placeholder="Rechercher">
-        <mat-icon matSuffix>search</mat-icon>
-      </mat-form-field> -->
 
       <!-- *ngIf="!logout" -->
       <mat-list-item>

@@ -33,8 +33,14 @@ import { RecipeFormComponent } from './components/recipe/recipe-form/recipe-form
 import { RecipesPageComponent } from './pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
-
 import { AddToMenuButtonComponent } from './components/menu/add-to-menu-button/add-to-menu-button.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
+import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
+import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
+import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
+import { BannerHomePageComponent } from './components/banner-home-page/banner-home-page.component';
+
 
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
@@ -54,12 +60,9 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { MenuComponent } from './components/menu/menu.component';
-import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
-import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
-import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
-import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
-import { BannerHomePageComponent } from './components/banner-home-page/banner-home-page.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
+
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -128,6 +131,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatExpansionModule,
     MatTableModule,
     MatSnackBarModule,
+    MatSidenavModule
   ],
   providers: [
     {
