@@ -13,17 +13,7 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
   }
 
-<<<<<<< HEAD
-    constructor(private auth: AuthService) {}
-    ngOnInit(): void {}  
-    logout() {
-      this.auth.logout();
-    }
-
-   /* isShowDiv = false
-=======
   /* isShowDiv = false
->>>>>>> master
     menuToggle(){ 
       this.isShowDiv = !this.isShowDiv;
     }*/
