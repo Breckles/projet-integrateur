@@ -3,27 +3,25 @@
   <img [src]="recipe.image"
        [alt]="recipe.nom">
   <mat-card-content>
-    <mat-card-subtitle>
-      {{recipe.nom}}
-      </p>
-      <ng-container *ngIf="showAddToMenuButton">
-        <button mat-button
-                type="button"
-                (click)="onAddRecipe($event)">Ajouter à mon menu</button>
-        <ng-template #addToMenuModalContent>
-          <app-add-recipe-to-menu-modal-content [recipeToAdd]="recipe"></app-add-recipe-to-menu-modal-content>
-        </ng-template>
-      </ng-container>
-      <ng-container *ngIf="showModifyButton">
-        <button mat-icon-button
-                type="button"
-                (click)="onModifyRecipe($event)">
-          <mat-icon>edit</mat-icon>
-        </button>
-        <ng-template #modifyRecipeModalContent>
-          <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
-        </ng-template>
-      </ng-container>
+    {{recipe.nom}}
+    <ng-container *ngIf="showAddToMenuButton">
+      <button mat-button
+              type="button"
+              (click)="onAddRecipe($event)">Ajouter à mon menu</button>
+      <ng-template #addToMenuModalContent>
+        <app-add-recipe-to-menu-modal-content [recipeToAdd]="recipe"></app-add-recipe-to-menu-modal-content>
+      </ng-template>
+    </ng-container>
+    <ng-container *ngIf="showModifyButton">
+      <button mat-icon-button
+              type="button"
+              (click)="onModifyRecipe($event)">
+        <mat-icon>edit</mat-icon>
+      </button>
+      <ng-template #modifyRecipeModalContent>
+        <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
+      </ng-template>
+    </ng-container>
   </mat-card-content>
 </mat-card>
 
