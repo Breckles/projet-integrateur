@@ -1,13 +1,18 @@
 <mat-card>
+  <mat-card-title> Mon menu </mat-card-title>
   <mat-calendar [(selected)]="dateSelected"
                 (selectedChange)="onDateSelectedChange($event)"></mat-calendar>
 </mat-card>
 <mat-card>
+
   <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
                            [recipes]="dayRecipes"
                            [showAddToMenuButton]="false"></app-recipe-list-display>
-  <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
+                          
+  <ng-template #noRecipes>Il n'y a aucune recette pour cette journee.
+    Souhaitez-vous en ajouter une ? </ng-template>
 </mat-card>
 <mat-card>
+  <mat-card-title> Mes recettes </mat-card-title>
   <app-user-recipes></app-user-recipes>
 </mat-card>
