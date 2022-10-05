@@ -17,8 +17,4 @@ export class FooterComponent {
   prevStep() {
       this.step--;
   }
-/*  constructor() { }
-*/
-  /*ngOnInit(): void {
-  } */
 }

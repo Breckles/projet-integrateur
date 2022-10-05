@@ -11,18 +11,16 @@
   <mat-nav-list class="nav-list-desktop">
     <mat-toolbar>
       <button class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
-      <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
-      <button class="nav-item "><a routerLink="/recipes" routerLinkActive="active">Recette</a></button>
-      <button class="nav-item "><a routerLink="/profile" routerLinkActive="active">Profile</a></button>
-
+      <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Mon menu</a></button>
+      <button class="nav-item "><a routerLink="/recipes" routerLinkActive="active">Recettes</a></button>
+      <button class="nav-item "><a routerLink="/profile" routerLinkActive="active">Mon profile</a></button>
+  
       <mat-form-field appearance="outline">
-        <input matInput placeholder="Rechercher">
+        <input matInput placeholder="Rechercher"> {{search}}
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
-
-      <mat-list-item>
+      
         <button class="nav-item__logout" (click)="logout()">Logout</button>
-      </mat-list-item>
-    </mat-toolbar>
+        </mat-toolbar>
   </mat-nav-list>
 </header>
