@@ -13,8 +13,8 @@ export class HeaderComponent implements OnInit {
     this.auth.logout();
   }
 
-  /* isShowDiv = false
+/*   isShowDiv = false
     menuToggle(){ 
       this.isShowDiv = !this.isShowDiv;
-    }*/
+    } */
 }
