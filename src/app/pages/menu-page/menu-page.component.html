@@ -1,13 +1,32 @@
-<mat-card>
-  <mat-calendar [(selected)]="dateSelected"
-                (selectedChange)="onDateSelectedChange($event)"></mat-calendar>
-</mat-card>
-<mat-card>
-  <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
-                           [recipes]="dayRecipes"
-                           [showAddToMenuButton]="false"></app-recipe-list-display>
-  <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
-</mat-card>
-<mat-card>
-  <app-user-recipes></app-user-recipes>
+<div class="menuSection">
+  <mat-card>
+    <mat-calendar [(selected)]="dateSelected"
+                  (selectedChange)="onDateSelectedChange($event)"></mat-calendar>
+  </mat-card>
+
+  <mat-card>
+    <mat-card-title>
+      Recettes de la journee
+    </mat-card-title>
+    <mat-card-content>
+      <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
+                               [recipes]="dayRecipes"
+                               [showAddToMenuButton]="false"
+                               [columns]="menuRecipesGridCols"></app-recipe-list-display>
+      <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-card class="userRecipesSection">
+  <mat-card-title>
+    Mes Recettes
+  </mat-card-title>
+  <mat-card-content>
+    <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
+                             [recipes]="userRecipes"
+                             [showAddToMenuButton]="false"
+                             [showModifyButton]="true"
+                             [columns]="userRecipesGridCols"></app-recipe-list-display>
+  </mat-card-content>
 </mat-card>

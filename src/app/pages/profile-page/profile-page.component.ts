@@ -17,9 +17,8 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
   constructor(private auth: AuthService) {}
 
   ngOnInit(): void {
-    this.userSubscription = this.auth.appUser.subscribe((user) => {
+    this.auth.getUser().then((user) => {
       this.user = user;
-      console.log(this.user);
     });
   }
 

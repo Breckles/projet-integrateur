@@ -1,6 +1,7 @@
 <app-recipe-list-display *ngIf="userRecipes.length > 0; else noRecipes"
                          [recipes]="userRecipes"
-                         [showModifyButton]="true"></app-recipe-list-display>
+                         [showModifyButton]="true"
+                         [columns]="columns"></app-recipe-list-display>
 
 <ng-template #noRecipes></ng-template>
 
