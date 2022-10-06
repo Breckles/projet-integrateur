@@ -6,8 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datead.component.scss']
 })
 export class DateadComponent implements OnInit {
-
-  constructor() { }
+today: number = Date.now();
 
   ngOnInit(): void {
   }

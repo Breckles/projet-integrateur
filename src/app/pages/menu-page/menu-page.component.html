@@ -1,4 +1,4 @@
-<mat-card>
+<mat-card class="calendar">
   <mat-card-title> Mon menu </mat-card-title>
   <mat-calendar [(selected)]="dateSelected"
                 (selectedChange)="onDateSelectedChange($event)"></mat-calendar>
@@ -15,4 +15,5 @@
 <mat-card>
   <mat-card-title> Mes recettes </mat-card-title>
   <app-user-recipes></app-user-recipes>
+  
 </mat-card>

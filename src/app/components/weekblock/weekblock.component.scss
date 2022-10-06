@@ -1,7 +1,11 @@
-.week-card>mat-list{
+/* .week-card>mat-list{
     border:none;
     display: inline-flex;
     flex-direction: row wrap;
     width: 200px;
+} */
+.week-card {
+background-color: bisque; 
+color: #333333;
+width: 100%;
 }
-
