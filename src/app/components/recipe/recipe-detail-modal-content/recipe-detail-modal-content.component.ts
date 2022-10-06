@@ -5,6 +5,8 @@ import {
   TemplateRef,
   ViewChild} from '@angular/core';
 import {IIngredientRecette} from 'models/ingredient-recette.model';
+import {MatTableModule} from '@angular/material/table';
+
 import { IRecette } from 'models/recipe.model';
 import { ModalService } from 'services/modal.service';
 
@@ -16,7 +18,8 @@ import { ModalService } from 'services/modal.service';
 export class RecipeDetailModalContentComponent implements OnInit {
   @Input()
   recipeToShow!: IRecette;
-
+  displayedColumns: string[] = ['nom', 'preparation', 'quantite', 'mesure'];
+  dataSource = this.recipeToShow;
   @Input()
   showButton: boolean = true;
 

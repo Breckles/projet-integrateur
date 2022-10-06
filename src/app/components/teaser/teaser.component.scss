@@ -3,29 +3,38 @@ width: 90%;
 margin-bottom: 8px;
 display:flex;
 flex-direction: row;
+
 img {
-display: block;
-aspect-ratio: 3 / 1;
-object-fit: cover;
+//display: block;
+//align-self: flex-start;
+//aspect-ratio: 3 / 1;
+//object-fit: cover;
 max-width: 50%;
 margin:0
 } 
-.teaser-content {
+
+/* .title, .subtitle {
     display:flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
    margin:auto;
-    &>* {
+   &>* {
         display: flex;
         justify-content: center;
         align-items: center;
         flex: auto;
-    }
+    } 
 }
 }
+.mat-card-title-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   align-items: center;
+}  
 
-/* mat-card {
+mat-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,4 +57,4 @@ mat-card-actions {
     display:flex;
     justify-content: center;
 } 
-} */
+} */ }
