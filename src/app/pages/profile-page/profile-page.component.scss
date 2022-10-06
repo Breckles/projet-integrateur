@@ -4,15 +4,19 @@
   flex-direction: column;
   width: 100%;
   justify-content: center;
-  height: 430px;
+  height: 100%;
   padding: auto 0;
 
   mat-card {
     flex: 1;
-    height: 300px;
-    margin-top: 2%;
+    height: 100px;
 
-    img {
+    mat-card-header {
+        align-items: center;
+    }
+
+    img.profile-avatar {
+      
       background-size: cover;
       height: 80px;
       width: 80px;
@@ -26,7 +30,7 @@
 @media screen and (min-width: 650px) {
   mat-card {
     mat-card-header {
-      .profile-avatar {
+      img.profile-avatar {
         height: 400px;
         width: 400px;
       }
