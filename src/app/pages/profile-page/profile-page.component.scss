@@ -6,34 +6,13 @@
   justify-content: center;
   height: 100%;
   padding: auto 0;
-
-  mat-card {
-    flex: 1;
-    height: 100px;
-
-    mat-card-header {
-        align-items: center;
-    }
-
-    img.profile-avatar {
-      
-      background-size: cover;
-      height: 80px;
-      width: 80px;
-      border-radius: 50%;
-      flex-shrink: 0;
-      object-fit: cover;
-    }
-  }
 }
 
+mat-card.profile-card{
+    display: flex;
+}
+
+
 @media screen and (min-width: 650px) {
-  mat-card {
-    mat-card-header {
-      img.profile-avatar {
-        height: 400px;
-        width: 400px;
-      }
-    }
-  }
+
 }

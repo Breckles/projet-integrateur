@@ -1,14 +1,19 @@
 <div *ngIf="user" id="main-profile">
   <mat-card class="profile-card">
-    <mat-card-header class="profile-card-header">
-      <div>
+
+    <div class="profile-card-header">
+      <div class="profile-img">
         <img mat-card-avatar class="profile-avatar"
           src="https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/download.png?alt=media&token=69716606-c841-4878-b6fd-a074521d4086"
           alt="">
       </div>
-      <mat-card-title>{{user.nomAfficher}}</mat-card-title>
-      <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
-    </mat-card-header>
+
+      <div class="profile-info">
+        <mat-card-title>{{user.nomAfficher}}</mat-card-title>
+        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      </div>
+    </div>
+    
     <mat-card-content>
       <p>Nom d'utilisateur: {{user.nomAfficher}}</p>
       <p>Adresse courriel: {{user.email}}</p>
