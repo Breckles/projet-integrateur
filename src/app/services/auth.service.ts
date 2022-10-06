@@ -52,6 +52,7 @@ export class AuthService {
         const newUser = {
           uid: this.firebaseUser.uid,
           nomAfficher: '',
+          avatar: '',
           email: this.firebaseUser.email!,
           role: 'M',
           actif: 1,
