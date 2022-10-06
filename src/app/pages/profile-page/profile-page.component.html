@@ -1,6 +1,29 @@
-<div *ngIf="user">
-  user is logged in
+<div *ngIf="user" id="main-profile">
+  <mat-card class="profile-card">
+    <mat-card-header class="profile-card-header">
+      <div>
+         <img mat-card-avatar class="profile-avatar" src="https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/download.png?alt=media&token=69716606-c841-4878-b6fd-a074521d4086" alt="">
+        <mat-card-title>
+          {{user.nomAfficher}}
+        </mat-card-title>
+        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+    <!-- To Form-it -->
+    <mat-card-header class="profile-card-header">
+      <div>
+         <img mat-card-avatar class="profile-avatar" src="https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/download.png?alt=media&token=69716606-c841-4878-b6fd-a074521d4086" alt="">
+        <mat-card-title>
+          {{user.nomAfficher}}
+        </mat-card-title>
+        <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
+      </div>
+    </mat-card-header>
+  </mat-card>
 </div>
+
+
+
 <div *ngIf="!user">
   user is logged out
 </div>
