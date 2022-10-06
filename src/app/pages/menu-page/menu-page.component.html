@@ -23,10 +23,13 @@
     Mes Recettes
   </mat-card-title>
   <mat-card-content>
-    <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
+    <app-recipe-list-display *ngIf="userRecipes.length > 0; else noRecipes"
                              [recipes]="userRecipes"
                              [showAddToMenuButton]="false"
                              [showModifyButton]="true"
                              [columns]="userRecipesGridCols"></app-recipe-list-display>
   </mat-card-content>
+  <mat-card-actions>
+    <app-add-recipe-button></app-add-recipe-button>
+  </mat-card-actions>
 </mat-card>
