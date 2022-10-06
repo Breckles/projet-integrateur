@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: 10px;
   width: 100%;
- // height: 100%;
+  // height: 100%;
 }
 
 
@@ -12,14 +12,21 @@
   flex: 1;
 }
 
+mat-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
 //DESKTOP
 @media screen and (min-width: 650px) {
   .menuSection {
     flex-direction: row;
-}
-.mat-card {
-   max-width: 50%;
-  } 
+  }
+
+  .mat-card {
+    // max-width: 50%;
+  }
+
   .userRecipesSection {
     width: 100%;
   }
