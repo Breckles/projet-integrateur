@@ -34,11 +34,6 @@ import { RecipesPageComponent } from './pages/recipes-page/recipes-page.componen
 import { ProfilePageComponent } from './pages/profile-page/profile-page.component';
 import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AddToMenuButtonComponent } from './components/menu/add-to-menu-button/add-to-menu-button.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
-import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
-import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
-import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
 import { BannerHomePageComponent } from './components/banner-home-page/banner-home-page.component';
 
 
@@ -63,6 +58,12 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 
 
+import { MenuComponent } from './components/menu/menu.component';
+import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
+import { AddRecipeToMenuModalContentComponent } from './components/menu/add-recipe-to-menu-modal-content/add-recipe-to-menu-modal-content.component';
+import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
+import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
+import { TeaserComponent } from './components/teaser/teaser.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -104,6 +105,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     RecipeDetailModalContentComponent,
     UserRecipesComponent,
     BannerHomePageComponent,
+    TeaserComponent,
   ],
   imports: [
     BrowserModule,

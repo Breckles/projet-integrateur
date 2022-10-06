@@ -4,9 +4,13 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  gap: 25px;
+  gap: 20px;
+  padding: 0 8px;
 }
-
+app-teaser{
+  display: flex;
+  justify-content: center;
+}
 app-recipe-list-display {
   display: flex;
   flex-wrap: wrap;
@@ -17,11 +21,12 @@ app-recipe-list-display {
   }
 }
 
+
 @media screen and (min-width: 650px) {
   .nestedFlex {
     flex-direction: row;
 
-    &>* {
+   &>* {
       width: 50%;
     }
   }

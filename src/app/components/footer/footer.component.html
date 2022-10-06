@@ -1,10 +1,8 @@
 <footer class="footer__desktop">
 <mat-toolbar>
-    <span>Recettes </span>
     <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
-    <a mat-button routerLink="/profil" routerLinkActive="active">Mon profil</a>
+    <a mat-button routerLink="/profile" routerLinkActive="active">Mon profil</a>
     <a mat-button routerLink="/recipes" routerLinkActive="active">Recettes</a>
-    <a mat-button routerLink="/home" routerLinkActive="active">Types de repas</a>
 </mat-toolbar>
 </footer>
 <footer class="footer__mobile">
@@ -28,31 +26,20 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>
-                <mat-list-item> <a routerLink="/profil" routerLinkActive="active">Mon profil</a></mat-list-item>
-                <mat-list-item> <a routerLink="/profil" routerLinkActive="active">Mon menu</a></mat-list-item>
+                <mat-list-item> <a routerLink="/profile" routerLinkActive="active">Mon profil</a></mat-list-item>
+                <mat-list-item> <a routerLink="/menu" routerLinkActive="active">Mon menu</a></mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
         <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)" hideToggle="false">
             <mat-expansion-panel-header>
                 <mat-panel-title style="color: #ffffff">
-                    Recettes
+                Recettes
                 </mat-panel-title>
-                  
             </mat-expansion-panel-header>
             <mat-nav-list>
-                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Dejeuner</a></mat-list-item>
-                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Diner</a></mat-list-item>
-                <mat-list-item> <a routerLink="/home" routerLinkActive="active">Souper</a></mat-list-item>
-
+                <mat-list-item> <a routerLink="/recipes" routerLinkActive="active">Toutes recettes</a></mat-list-item>
+                <mat-list-item> <a routerLink="/menu" routerLinkActive="active">Créer recette</a></mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>
     </mat-accordion>
-
-
- <!-- <mat-toolbar> 
-    <span>Recettes </span>
-    <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
-    <a mat-button routerLink="/menu" routerLinkActive="active">Mon profil</a>
-    <a mat-button routerLink="/home" routerLinkActive="active">Recettes</a>
-</mat-toolbar> -->
 </footer>
