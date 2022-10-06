@@ -53,6 +53,7 @@ export class AuthService {
           uid: this.firebaseUser.uid,
           nomAfficher: '',
           email: this.firebaseUser.email!,
+          avatar: '',
           role: 'M',
           actif: 1,
         };
