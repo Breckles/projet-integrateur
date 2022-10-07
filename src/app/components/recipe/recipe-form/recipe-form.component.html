@@ -47,46 +47,53 @@
           (click)="onAddIngredient()">
     <mat-icon>add_circle_outline</mat-icon>
   </button>
-  <mat-list formArrayName="ingredients">
-    <mat-list-item *ngFor="let ingredient of getIngredientControls(); index as i"
-                   [formGroupName]="i">
-      <button mat-icon-button
-              type="button"
-              (click)="onRemoveIngredient(i)">
-        <mat-icon>remove_circle_outline</mat-icon>
-      </button>
-      <mat-form-field>
-        <mat-label>Nom</mat-label>
-        <input matInput
-               formControlName="nom">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Preparation</mat-label>
-        <input matInput
-               formControlName="preparation">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Quantite</mat-label>
-        <input matInput
-               formControlName="quantite"
-               type="number">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Unites</mat-label>
-        <mat-select formControlName="unites">
-          <mat-option *ngFor="let label of poidMesureLabels; index as i"
-                      value="{{i}}">{{label}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Categorie</mat-label>
-        <mat-select formControlName="categorie">
-          <mat-option *ngFor="let label of categorieLabels; index as i"
-                      value="{{i}}">{{label}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-    </mat-list-item>
-  </mat-list>
+  <div class="ingredient-field">
+    <mat-list formArrayName="ingredients">
+      <mat-list-item *ngFor="let ingredient of getIngredientControls(); index as i"
+                     [formGroupName]="i">
+        <button mat-icon-button
+                type="button"
+                (click)="onRemoveIngredient(i)">
+          <mat-icon>remove_circle_outline</mat-icon>
+        </button>
+
+        <mat-form-field class="">
+          <mat-label>Nom</mat-label>
+          <input matInput
+                 formControlName="nom">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Preparation</mat-label>
+          <input matInput
+                 formControlName="preparation">
+        </mat-form-field>
+
+        <mat-form-field class="field-number">
+          <mat-label>Quantite</mat-label>
+          <input matInput
+                 formControlName="quantite"
+                 type="number">
+        </mat-form-field>
+
+        <mat-form-field class="field-number">
+          <mat-label>Unites</mat-label>
+          <mat-select formControlName="unites">
+            <mat-option *ngFor="let label of poidMesureLabels; index as i"
+                        value="{{i}}">{{label}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Categorie</mat-label>
+          <mat-select formControlName="categorie">
+            <mat-option *ngFor="let label of categorieLabels; index as i"
+                        value="{{i}}">{{label}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-list-item>
+    </mat-list>
+  </div>
   <button type="submit"
           mat-button>Confirmer</button>
 </form>
