@@ -3,9 +3,9 @@ $dark-power: #333333;
 
 mat-card {
   display: block;
-  background: no-repeat linear-gradient(to left, transparent, rgb(255, 255, 255, 0.7)), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/banner2.jpg?alt=media&token=15cc1a9a-09a3-4dc4-a5e3-2c21315f4412);
-  background-size: content;
-  background-position:  right 20px;
+  background: no-repeat linear-gradient(to left, transparent, rgb(255, 255, 255, 0.8)), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/banner2.jpg?alt=media&token=15cc1a9a-09a3-4dc4-a5e3-2c21315f4412);
+  background-size: cover;
+  background-position: bottom right ;
   max-width: auto 0;
   min-height: 200px;
   margin-bottom: 8px;
@@ -13,19 +13,23 @@ mat-card {
 
   p {
     justify-content: space-between;
-
     &.title {
       font-weight: 500;
-      font-size: 5rem;
-      line-height: 40px;
+      font-size: 4.5rem;
+      line-height: 45px;
       height: auto;
       width: auto;
       margin-right: 15px;
     }
-
+    
     &.text {
+      text-shadow: 25px 25px 250px $light-power;
+      font-weight: 600;
+      font-size: 1.5rem;
       line-height: 20px;
       width: 250px;
+      margin-top: 20px;
+      color: $dark-power;
 
     }
   }
