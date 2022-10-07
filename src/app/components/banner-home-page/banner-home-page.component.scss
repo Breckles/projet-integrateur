@@ -3,8 +3,9 @@ $dark-power: #333333;
 
 mat-card {
   display: block;
-  background: no-repeat linear-gradient(to left, transparent, $light-power), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/banner1.jpg?alt=media&token=80ec81e3-4977-46b8-a92c-cb01346f092c);
-  background-size: cover;
+  background: no-repeat linear-gradient(to left, transparent, rgb(255, 255, 255, 0.7)), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/banner2.jpg?alt=media&token=15cc1a9a-09a3-4dc4-a5e3-2c21315f4412);
+  background-size: content;
+  background-position:  right 20px;
   max-width: auto 0;
   min-height: 200px;
   margin-bottom: 8px;
@@ -22,11 +23,11 @@ mat-card {
       width: auto;
       margin-right: 15px;
     }
-    
+
     &.text {
-        
+      line-height: 20px;
       width: 250px;
-      
+
     }
   }
 
@@ -35,28 +36,35 @@ mat-card {
 /******** DESKTOP >= 1140PX *********/
 @media screen and (min-width: 1140px) {
   mat-card {
-    min-height: 400px;
+    min-height: 350px;
     display: flex;
     padding: 45px;
-    p {
-      justify-content: space-between;
-  
-      &.title {
-        font-weight: 500;
-        font-size: 4rem;
-        line-height: 40px;
-        height: auto;
-        width: auto 0;
-        margin: 15px 0;
+    background-size: cover;
 
-      }
-      
-      &.text {
-        font-weight: 200;
-        font-size: 2rem;
-        line-height: 40px;
+    mat-card-content {
+
+      p {
+        justify-content: space-between;
+        
+        &.title {
+          text-shadow: 3px 3px 5px $light-power;
+          font-weight: 500;
+          font-size: 5rem;
+          line-height: 40px;
+          height: auto;
+          width: auto 0;
+          margin: 15px 0;
+
+        }
+
+        &.text {
+          margin-top: 80px;
+          font-weight: 500;
+          font-size: 2.2rem;
+          line-height: 40px;
           color: $dark-power;
-        width: 500px;
+          width: 500px;
+        }
       }
     }
   }

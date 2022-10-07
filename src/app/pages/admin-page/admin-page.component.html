@@ -1,1 +1,37 @@
-<p>admin-page works!</p>
+<h2>Table des utilisateurs</h2>
+
+<table mat-table
+       [dataSource]="appUsers">
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell
+        *matHeaderCellDef> Email </th>
+    <td mat-cell
+        *matCellDef="let user"
+        class="tableCell"> {{user.email}} </td>
+  </ng-container>
+  <ng-container matColumnDef="nomAfficher">
+    <th mat-header-cell
+        *matHeaderCellDef> Nom Afficher </th>
+    <td mat-cell
+        *matCellDef="let user"
+        class="tableCell nomAfficher"> {{user.nomAfficher}} </td>
+  </ng-container>
+  <ng-container matColumnDef="actif">
+    <th mat-header-cell
+        *matHeaderCellDef> Actif </th>
+    <td mat-cell
+        *matCellDef="let user"
+        class="tableCell">
+      <mat-slide-toggle [checked]="user.actif === 1"
+                        (change)="onToggleActif($event, user)">{{ user.actif ? 'Actif' : 'Inactif' }}
+      </mat-slide-toggle>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row
+      *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row
+      *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>

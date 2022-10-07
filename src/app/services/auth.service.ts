@@ -52,8 +52,8 @@ export class AuthService {
         const newUser = {
           uid: this.firebaseUser.uid,
           nomAfficher: '',
-          email: this.firebaseUser.email!,
           avatar: '',
+          email: this.firebaseUser.email!,
           role: 'M',
           actif: 1,
         };
@@ -85,6 +85,34 @@ export class AuthService {
     }
 
     return;
+  }
+
+  async getAllAppUsers() {
+    let appUsers: IUser[] = [];
+
+    const result = await this.userCollection.ref.get();
+
+    if (!result.empty) {
+      appUsers = result.docs.map((snapshot) => snapshot.data());
+    }
+
+    return appUsers;
+  }
+
+  async setAppUserActiveStatus(uid: string, active: boolean) {
+    const value = active ? 1 : 0;
+
+    await this.userCollection.ref.doc(uid).update({ actif: value });
+
+    return value;
+  }
+  async updateUser(updateData: Partial<IUser>) {
+    const user = await this.auth.currentUser;
+    if (user) {
+      await this.userCollection.doc(user.uid).update(updateData);
+      this._appUser = { ...this._appUser!, ...updateData };
+      this.appUser.next({ ...this._appUser });
+    }
   }
 
   logout() {
