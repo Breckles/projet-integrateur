@@ -87,6 +87,15 @@ export class AuthService {
     return;
   }
 
+  async updateUser(updateData: Partial<IUser>) {
+    const user = await this.auth.currentUser;
+    if (user) {
+      await this.userCollection.doc(user.uid).update(updateData);
+      this._appUser = { ...this._appUser!, ...updateData };
+      this.appUser.next({ ...this._appUser });
+    }
+  }
+
   logout() {
     this.auth.signOut();
   }

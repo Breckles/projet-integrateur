@@ -1,11 +1,13 @@
-<div *ngIf="user" id="main-profile">
+<div *ngIf="user"
+     id="main-profile">
   <mat-card class="profile-card">
 
     <div class="profile-card-header">
       <div class="profile-img">
-        <img mat-card-avatar class="profile-avatar"
-          src="https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/download.png?alt=media&token=69716606-c841-4878-b6fd-a074521d4086"
-          alt="">
+        <img mat-card-avatar
+             class="profile-avatar"
+             [src]="user.avatar"
+             alt="">
       </div>
 
       <div class="profile-info">
@@ -15,15 +17,32 @@
     </div>
 
     <mat-card-content>
-      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+
+      <div class="nomAfficherField">
         <mat-form-field>
           <mat-label class="text-user-name">Nom d'utilisateur: </mat-label>
-          <input matInput formControlName="nomAfficher">
+          <input matInput
+                 value="{{user.nomAfficher}}"
+                 #nomAfficherInput>
         </mat-form-field>
-        <button type="submit" mat-button>Confirmer</button>
-      </form>
+        <button type="button"
+                mat-button
+                (click)="onChangeNomAfficher(nomAfficherInput.value)">Confirmer</button>
+      </div>
+      <div class="avatarField">
+        <mat-form-field>
+          <mat-label class="text-user-name">Image d'avatar: </mat-label>
+          <input matInput
+                 value="{{user.avatar}}"
+                 #avatarInput>
+        </mat-form-field>
+        <button type="button"
+                mat-button
+                (click)="onChangeAvatar(avatarInput.value)">Confirmer</button>
+      </div>
 
-      <p class="text-user-actif" *ngIf="user.actif === 0">Veuillez connecter l'administrateur</p>
+      <p class="text-user-actif"
+         *ngIf="user.actif === 0">Veuillez connecter l'administrateur</p>
     </mat-card-content>
   </mat-card>
 </div>
