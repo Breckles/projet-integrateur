@@ -15,7 +15,14 @@
     </div>
 
     <mat-card-content>
-      <p class="text-user-name">Nom d'utilisateur: {{user.nomAfficher}}</p>
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+          <mat-label class="text-user-name">Nom d'utilisateur: </mat-label>
+          <input matInput formControlName="nomAfficher">
+        </mat-form-field>
+        <button type="submit" mat-button>Confirmer</button>
+      </form>
+
       <p class="text-user-actif" *ngIf="user.actif === 0">Veuillez connecter l'administrateur</p>
     </mat-card-content>
   </mat-card>
