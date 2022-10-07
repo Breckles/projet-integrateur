@@ -3,7 +3,7 @@ $dark-power: #333333;
 
 mat-card {
   display: block;
-  background: no-repeat linear-gradient(to left, transparent, $light-power), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/a4f5ad8961ad2413215d40a981925862.jpg?alt=media&token=b6614dd1-f8a3-470c-bd9d-df04155d0f89);
+  background: no-repeat linear-gradient(to left, transparent, $light-power), url(https://firebasestorage.googleapis.com/v0/b/projet-integrateur-66811.appspot.com/o/banner1.jpg?alt=media&token=80ec81e3-4977-46b8-a92c-cb01346f092c);
   background-size: cover;
   max-width: auto 0;
   min-height: 200px;
@@ -12,10 +12,11 @@ mat-card {
 
   p {
     justify-content: space-between;
+    
 
     &.title {
       font-weight: 500;
-      font-size: 5rem;
+      font-size: 4rem;
       line-height: 40px;
       height: auto;
       width: auto;
@@ -42,7 +43,7 @@ mat-card {
   
       &.title {
         font-weight: 500;
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: 40px;
         height: auto;
         width: auto 0;
