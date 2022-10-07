@@ -1,0 +1,41 @@
+:host,
+#main-profile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  height: 100%;
+  padding: auto 0;
+}
+
+mat-card.profile-card {
+  display: flex;
+  flex-direction: column;
+
+  .profile-img {
+    height: 80px;
+    width: 80px;
+
+    .profile-avatar {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+
+  mat-card-content {
+    mat-label {
+      margin: 0;
+    }
+  }
+}
+
+
+@media screen and (min-width: 650px) {
+  profile-card-header {
+    .profile-img {
+      height: 400px;
+      width: 400px;
+    }
+  }
+}

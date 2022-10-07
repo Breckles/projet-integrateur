@@ -52,6 +52,7 @@ export class AuthService {
         const newUser = {
           uid: this.firebaseUser.uid,
           nomAfficher: '',
+          avatar: '',
           email: this.firebaseUser.email!,
           avatar: '',
           role: 'M',
@@ -105,6 +106,13 @@ export class AuthService {
     await this.userCollection.ref.doc(uid).update({ actif: value });
 
     return value;
+  async updateUser(updateData: Partial<IUser>) {
+    const user = await this.auth.currentUser;
+    if (user) {
+      await this.userCollection.doc(user.uid).update(updateData);
+      this._appUser = { ...this._appUser!, ...updateData };
+      this.appUser.next({ ...this._appUser });
+    }
   }
 
   logout() {
