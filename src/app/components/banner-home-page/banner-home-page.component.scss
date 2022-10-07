@@ -34,7 +34,7 @@ mat-card {
 /******** DESKTOP >= 1140PX *********/
 @media screen and (min-width: 1140px) {
   mat-card {
-    min-height: 400px;
+    min-height: 350px;
     display: flex;
     padding: 45px;
 
@@ -57,7 +57,7 @@ mat-card {
         &.text {
           margin-top: 80px;
           font-weight: 500;
-          font-size: 2.5rem;
+          font-size: 2.2rem;
           line-height: 40px;
           color: $dark-power;
           width: 500px;
