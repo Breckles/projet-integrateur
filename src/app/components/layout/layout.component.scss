@@ -1,7 +1,7 @@
 :host {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  // gap: 16px;
   width: 100vw;
   max-width: 1200px;
   min-height: 100vh;
@@ -19,6 +19,11 @@ mat-sidenav-container {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  padding: 16px 0;
+}
+
+mat-sidenav {
+  width: 50%;
 }
 
 mat-sidenav-content {

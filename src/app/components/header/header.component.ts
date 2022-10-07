@@ -1,6 +1,12 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { AuthService } from 'services/auth.service';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +14,20 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild(MatSidenavModule)
-  sidenav!: MatSidenavModule;
-  
+  @Output()
+  onOpenSideNav = new EventEmitter<void>();
+
   constructor(private auth: AuthService) {}
+
   ngOnInit(): void {}
+
   logout() {
     this.auth.logout();
   }
+
+  openSideNavHandler() {
+    this.onOpenSideNav.emit();
+  }
+
   showFiller = false;
-/*   isShowDiv = false
-    menuToggle(){ 
-      this.isShowDiv = !this.isShowDiv;
-    } */
 }

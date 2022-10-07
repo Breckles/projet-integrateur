@@ -1,6 +1,6 @@
-<app-header></app-header>
+<app-header (onOpenSideNav)="sideNav.open()"></app-header>
 <mat-sidenav-container class="nav-container">
-  <mat-sidenav>
+  <mat-sidenav #sideNav>
     <app-side-nav></app-side-nav>
   </mat-sidenav>
   <mat-sidenav-content>
