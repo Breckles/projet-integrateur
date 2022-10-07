@@ -14,15 +14,26 @@
   }
 }
 
+.ingredient-field {
+  overflow-y: scroll;
+  height: 360px;
+
+  mat-form-field.field-number {
+    gap: 50%;
+    width: 75px;
+
+  }
+}
 
 
 ///////////////////Desktop////////////////////////
 @media screen and (min-width: 650px) {
 
   mat-form-field.field-intructions {
-    display:block;
+    display: block;
     width: 500px;
     justify-items: center;
+
     textarea {
       resize: both;
       display: inline-block;
