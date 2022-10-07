@@ -63,7 +63,7 @@ import { AddRecipeToMenuModalContentComponent } from './components/menu/add-reci
 import { RecipeDetailModalContentComponent } from './components/recipe/recipe-detail-modal-content/recipe-detail-modal-content.component';
 import { UserRecipesComponent } from './components/recipe/user-recipes/user-recipes.component';
 import { TeaserComponent } from './components/teaser/teaser.component';
-import { NavComponent } from './components/header/nav/nav.component';
+import { SideNavComponent } from './components/header/side-nav/side-nav.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -106,7 +106,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     UserRecipesComponent,
     BannerHomePageComponent,
     TeaserComponent,
-    NavComponent,
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
