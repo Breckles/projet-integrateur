@@ -86,6 +86,26 @@ export class AuthService {
     return;
   }
 
+  async getAllAppUsers() {
+    let appUsers: IUser[] = [];
+
+    const result = await this.userCollection.ref.get();
+
+    if (!result.empty) {
+      appUsers = result.docs.map((snapshot) => snapshot.data());
+    }
+
+    return appUsers;
+  }
+
+  async setAppUserActiveStatus(uid: string, active: boolean) {
+    const value = active ? 1 : 0;
+
+    await this.userCollection.ref.doc(uid).update({ actif: value });
+
+    return value;
+  }
+
   logout() {
     this.auth.signOut();
   }

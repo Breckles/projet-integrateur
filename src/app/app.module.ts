@@ -36,7 +36,6 @@ import { AdminPageComponent } from './pages/admin-page/admin-page.component';
 import { AddToMenuButtonComponent } from './components/menu/add-to-menu-button/add-to-menu-button.component';
 import { BannerHomePageComponent } from './components/banner-home-page/banner-home-page.component';
 
-
 // Material components
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -55,8 +54,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import {MatSidenavModule} from '@angular/material/sidenav';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { MenuComponent } from './components/menu/menu.component';
 import { CalendrierComponent } from './components/menu/calendrier/calendrier.component';
@@ -133,7 +132,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     MatExpansionModule,
     MatTableModule,
     MatSnackBarModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSlideToggleModule,
   ],
   providers: [
     {
