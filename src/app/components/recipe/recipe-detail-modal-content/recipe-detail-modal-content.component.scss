@@ -16,10 +16,12 @@ img {
 }
 .mat-icon-button {
   float: right;
-  }
-  button {
-    float: right;
-  }
+  }  
+
+.buttonAddRecipe{
+  text-align: right;
+ } 
+
 .top-content{
 display: flex;
 flex-direction: column;
@@ -57,9 +59,7 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
   margin: 3%;
   white-space: pre-wrap;
 }
-.button-container{
-  padding: 10px;
-}
+
 //Desktop
 @media only screen and (min-width: 1140px) {
 .top-content {
@@ -79,6 +79,4 @@ img{
   .top-content {
   flex-direction: column;
   }
-
-
 }
