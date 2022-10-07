@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 16px;
   width: 100vw;
-  // height: 100%;
   max-width: 1200px;
   min-height: 100vh;
   margin: 0 auto;
@@ -14,19 +13,24 @@ app-header {
   position: sticky;
 }
 
+mat-sidenav-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+mat-sidenav-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
   flex: 1;
-  // min-height: 100%;
-  // height: 100%;
 }
 
 app-footer {
   height: 100px;
-  //position: ;
 }
-
-// #content {
-//   width: 100%;
-//   height: 100%;
-//   padding: 24px;
-// }
