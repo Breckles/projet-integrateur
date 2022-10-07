@@ -1,46 +1,48 @@
 <h2 class="mat-h2">Creer une nouvelle recette</h2>
 <form [formGroup]="recipeForm"
       (ngSubmit)="onSubmit()">
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Nom</mat-label>
     <input matInput
            formControlName="nom">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Image</mat-label>
     <input matInput
            formControlName="image">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Personnes servis</mat-label>
     <input type="number"
            matInput
            formControlName="nombreServis">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Temp de preparation</mat-label>
     <input type="number"
            matInput
            formControlName="tempPreparation">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Temp de cuisson</mat-label>
     <input type="number"
            matInput
            formControlName="tempCuisson">
   </mat-form-field>
-  <mat-form-field>
+  <mat-form-field class="form-field-info">
     <mat-label>Type de recette</mat-label>
     <mat-select formControlName="typeRecette">
       <mat-option *ngFor="let label of typeLabels; index as i"
                   value="{{i}}">{{label}}</mat-option>
     </mat-select>
   </mat-form-field>
+
   <mat-form-field class="field-intructions" appearance="fill">
     <mat-label>Instructions</mat-label>
     <textarea matInput
               formControlName="instructions"></textarea>
   </mat-form-field>
+
   <h3>Ingredients</h3>
   <button mat-icon-button
           type="button"
@@ -57,26 +59,26 @@
           <mat-icon>remove_circle_outline</mat-icon>
         </button>
 
-        <mat-form-field class="">
+        <mat-form-field class="ingredient-form-field">
           <mat-label>Nom</mat-label>
           <input matInput
                  formControlName="nom">
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="ingredient-form-field">
           <mat-label>Preparation</mat-label>
           <input matInput
                  formControlName="preparation">
         </mat-form-field>
 
-        <mat-form-field class="field-number">
+        <mat-form-field class="field-number ingredient-form-field">
           <mat-label>Quantite</mat-label>
           <input matInput
                  formControlName="quantite"
                  type="number">
         </mat-form-field>
 
-        <mat-form-field class="field-number">
+        <mat-form-field class="field-number ingredient-form-field">
           <mat-label>Unites</mat-label>
           <mat-select formControlName="unites">
             <mat-option *ngFor="let label of poidMesureLabels; index as i"
@@ -84,7 +86,7 @@
           </mat-select>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field class="ingredient-form-field">
           <mat-label>Categorie</mat-label>
           <mat-select formControlName="categorie">
             <mat-option *ngFor="let label of categorieLabels; index as i"
@@ -94,6 +96,6 @@
       </mat-list-item>
     </mat-list>
   </div>
-  <button type="submit"
+  <button class="btn-recette" type="submit"
           mat-button>Confirmer</button>
 </form>

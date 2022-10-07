@@ -1,9 +1,10 @@
+$dark-power: #333333;
+
 :host {
   display: block;
 }
 
 @media screen and (orientation: landscape) {
-
   mat-form-field.field-intructions {
     width: 500px;
 
@@ -14,30 +15,62 @@
   }
 }
 
+mat-form-field.field-intructions {
+  width: 250px;
+
+  textarea {
+    height: 150px;
+  }
+}
+
 .ingredient-field {
   overflow-y: scroll;
   height: 360px;
 
-  mat-form-field.field-number {
-    gap: 50%;
-    width: 75px;
+  .ingredient-form-field {
+    padding: 10px 10px 0 0;
 
   }
+
+  mat-form-field.field-number {
+    gap: 50%;
+    width: 80px;
+  }
+
 }
 
 
 ///////////////////Desktop////////////////////////
 @media screen and (min-width: 650px) {
+  mat-form-field.form-field-info {
+    padding: 20px 20px 0 0;
+  }
+
+  .ingredient-field {
+    width: 815px;
+    height: 360px;
+
+
+    .ingredient-form-field {
+      padding: 10px 10px 0 0;
+
+    }
+
+    mat-form-field.field-number {
+      gap: 50%;
+      width: 80px;
+    }
+
+  }
 
   mat-form-field.field-intructions {
     display: block;
-    width: 500px;
+    width: 900px;
     justify-items: center;
 
     textarea {
       resize: both;
-      display: inline-block;
-      width: 100%;
+      // width: 100%;
     }
   }
 }
