@@ -8,11 +8,34 @@
   padding: auto 0;
 }
 
-mat-card.profile-card{
-    display: flex;
+mat-card.profile-card {
+  display: flex;
+  flex-direction: column;
+
+  .profile-img {
+    height: 80px;
+    width: 80px;
+
+    .profile-avatar {
+      height: 80px;
+      width: 80px;
+    }
+  }
+
+
+  mat-card-content {
+    p {
+      margin: 0;
+    }
+  }
 }
 
 
 @media screen and (min-width: 650px) {
-
+  profile-card-header {
+    .profile-img {
+      height: 400px;
+      width: 400px;
+    }
+  }
 }

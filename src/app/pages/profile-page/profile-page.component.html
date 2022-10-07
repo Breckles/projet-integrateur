@@ -13,11 +13,10 @@
         <mat-card-subtitle>{{user.email}}</mat-card-subtitle>
       </div>
     </div>
-    
+
     <mat-card-content>
-      <p>Nom d'utilisateur: {{user.nomAfficher}}</p>
-      <p>Adresse courriel: {{user.email}}</p>
-      <p *ngIf="user.actif === 0">Veuillez connecter l'administrateur</p>
+      <p class="text-user-name">Nom d'utilisateur: {{user.nomAfficher}}</p>
+      <p class="text-user-actif" *ngIf="user.actif === 0">Veuillez connecter l'administrateur</p>
     </mat-card-content>
   </mat-card>
 </div>
