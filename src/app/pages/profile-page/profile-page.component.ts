@@ -42,7 +42,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       // Send request to change nomAfficher
       const updateData = { nomAfficher: newValue };
       await this.auth.updateUser(updateData);
-      this.snackBar.open('Succes', '', { duration: 2000 });
+      this.snackBar.open('Success', '', { duration: 2000 });
     }
   }
 
@@ -51,7 +51,7 @@ export class ProfilePageComponent implements OnInit, OnDestroy {
       // Send request to change nomAfficher
       const updateData = { avatar: newValue };
       await this.auth.updateUser(updateData);
-      this.snackBar.open('Succes', '', { duration: 2000 });
+      this.snackBar.open('Success', '', { duration: 2000 });
     }
   }
 
