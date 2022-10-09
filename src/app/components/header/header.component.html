@@ -9,9 +9,27 @@
     <a mat-list-item
        routerLink="/menu"
        routerLinkActive="active"> Mon Menu </a>
-    <a mat-list-item
-       routerLink="/profile"
-       routerLinkActive="active"> Profile </a>
+    <ng-container *ngIf="user; else loginBtnTemplate">
+      <a mat-list-item
+         routerLink="/profile"
+         routerLinkActive="active">
+        Profile
+      </a>
+      <button mat-list-item
+              class="logoutBtn"
+              (click)="onLogout()">
+        <mat-icon matListIcon>logout</mat-icon>
+        Deconnexion
+      </button>
+    </ng-container>
+    <ng-template #loginBtnTemplate>
+      <button mat-list-item
+              class="loginBtn"
+              (click)="onLogin()">
+        <mat-icon matListIcon>login</mat-icon>
+        Connexion
+      </button>
+    </ng-template>
   </mat-nav-list>
 
   <button mat-icon-button

@@ -7,7 +7,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  open = true;
   constructor() {}
 
   ngOnInit(): void {}

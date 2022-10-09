@@ -1,6 +1,5 @@
 <mat-sidenav-container class="nav-container">
-  <mat-sidenav [(opened)]="open"
-               #sideNav
+  <mat-sidenav #sideNav
                fixedInViewport="true">
     <app-side-nav (onClose)="sideNav.close()"></app-side-nav>
   </mat-sidenav>
