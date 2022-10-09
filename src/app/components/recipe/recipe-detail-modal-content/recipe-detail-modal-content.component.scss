@@ -18,8 +18,9 @@ img {
   float: right;
   }  
 
-.buttonAddRecipe{
-  text-align: right;
+.button-container{
+ text-align: right;
+ margin-right: auto;
  } 
 
 .top-content{
@@ -38,7 +39,6 @@ flex: 1;
 }
 .title{
     font-weight: 500;
-    font-size:larger;
     margin: 15px 0;
 }
 .info-list{
@@ -64,6 +64,9 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
 @media only screen and (min-width: 1140px) {
 .top-content {
 flex-direction: row;
+}
+.header-group{
+  margin-top: 10px;
 }
 .info-list{
   flex-direction: row;
