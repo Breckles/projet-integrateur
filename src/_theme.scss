@@ -1,36 +1,13 @@
  $dark-power: #333333;
-  $light-power: #f9f9fc;
-  $gray-power: #c9c9c9;
-  $orange-power: #fa6e05;
-  $light-orange-power: #fdcfac;
-  $beige-power: #f0d5b3;
-  $light-beige-power: #faf1e6;
-  $red-power: #DE342D;
-  $light-red-power: #ee9591;
-  $purple-power: #A5389D;
-  $light-purple-power: #e6b4e2;
-  $yellow-power: #e7b032;
-  $light-yellow-power: #f0cf82;
-
-
-/* @use '@angular/material' as mat;
-@include mat.core();
-
-$my-app-primary: mat.define-palette(mat.$blue-grey-palette);
-$my-app-accent: mat.define-palette(mat.$orange-palette, A700, 100, 50);
-$my-app-warn: mat.define-palette(mat.$purple-palette, 400, 100);
-
-$my-app-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $my-app-primary,
-      accent: $my-app-accent,
-      warn: $my-app-warn,
-    ),
-  )
-);
-
-@include mat.all-component-themes($my-app-theme);
-*{
-  font-family: 'Poppins', sans-serif;
-}
+ $light-power: #f9f9fc;
+ $gray-power: #c9c9c9;
+ $orange-power: #fa6e05;
+ $light-orange-power: #fdcfac;
+ $beige-power: #f0d5b3;
+ $light-beige-power: #faf1e6;
+ $red-power: #DE342D;
+ $light-red-power: #ee9591;
+ $purple-power: #A5389D;
+ $light-purple-power: #e6b4e2;
+ $yellow-power: #e7b032;
+ $light-yellow-power: #f0cf82;

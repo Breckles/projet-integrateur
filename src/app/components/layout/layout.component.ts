@@ -7,11 +7,8 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
-  constructor(private auth: AngularFireAuth) {}
+  open = true;
+  constructor() {}
 
   ngOnInit(): void {}
-
-  logout() {
-    this.auth.signOut();
-  }
 }
