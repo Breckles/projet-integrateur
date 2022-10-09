@@ -13,7 +13,8 @@
                                [recipes]="dayRecipes"
                                [showAddToMenuButton]="false"
                                [columns]="menuRecipesGridCols"></app-recipe-list-display>
-      <ng-template #noRecipes>Il n'y a aucune recette pour cette journee</ng-template>
+      <ng-template #noRecipes> <span class="content" > Il n'y a aucune recette pour cette journee. 
+        Souhaitez-vous en ajouter une ? </span> </ng-template>
     </mat-card-content>
   </mat-card>
 </div>
