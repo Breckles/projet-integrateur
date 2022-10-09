@@ -1,6 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { AuthService } from 'services/auth.service';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { Subscription } from 'rxjs';
+
+import { IUser } from 'models/user.model';
+import { ModalService } from 'services/modal.service';
+import { AuthComponent } from 'components/auth/auth.component';
 
 @Component({
   selector: 'app-header',
@@ -8,17 +18,33 @@ import {MatSidenavModule} from '@angular/material/sidenav';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  @ViewChild(MatSidenavModule)
-  sidenav!: MatSidenavModule;
-  
-  constructor(private auth: AuthService) {}
-  ngOnInit(): void {}
-  logout() {
+  @Output()
+  onOpenSideNav = new EventEmitter<void>();
+
+  user: IUser | undefined;
+  userSub = new Subscription();
+
+  constructor(private auth: AuthService, private ms: ModalService) {}
+
+  ngOnInit(): void {
+    this.auth.getUser().then((user) => {
+      this.user = user;
+    });
+
+    this.userSub = this.auth.appUser.subscribe((user) => {
+      this.user = user;
+    });
+  }
+
+  onLogin() {
+    this.ms.openModal<AuthComponent>(AuthComponent);
+  }
+
+  onLogout() {
     this.auth.logout();
   }
-  showFiller = false;
-/*   isShowDiv = false
-    menuToggle(){ 
-      this.isShowDiv = !this.isShowDiv;
-    } */
+
+  openSideNavHandler() {
+    this.onOpenSideNav.emit();
+  }
 }

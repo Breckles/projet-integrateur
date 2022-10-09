@@ -1,86 +1,40 @@
-<!-- <header id="header-nav">
-
-  <mat-sidenav-container class="nav-container">
-  <mat-toolbar>
-    <mat-icon class="nav-menu-btn"
-              mat-button
-              (click)="sidenav.toggle()"
-              *ngIf="!sidenav.opened">menu</mat-icon>
-    <mat-icon class="nav-menu-btn"
-              mat-button
-              (click)="sidenav.toggle()"
-              *ngIf="sidenav.opened">close</mat-icon>
-  </mat-toolbar>
-  <mat-sidenav #sidenav="matSidenav"
-               [fixedInViewport]="true"
-               class="nav-content">
-    <mat-nav-list>
-      <mat-list-item button
-                     mat-raised-button
-                     class="nav-item">
-        <a routerLink="/home"
-           routerLinkActive="active">Home</a>
-      </mat-list-item>
-      <mat-list-item button
-                     mat-raised-button
-                     class="nav-item">
-        <a routerLink="/menu"
-           routerLinkActive="active">Menu</a>
-      </mat-list-item>
-      <mat-list-item button
-                     class="nav-item__logout"
-                     (click)="logout()">Logout</mat-list-item>
-    </mat-nav-list>
-  </mat-sidenav>
-  </mat-sidenav-container>
-
-
-
-  <mat-nav-list class="nav-list-desktop">
-    <mat-toolbar>
-      <button class="nav-item"><a routerLink="/home"
-           routerLinkActive="active">Home</a></button>
-      <button class="nav-item "><a routerLink="/menu"
-           routerLinkActive="active">Menu</a></button>
-      <button class="nav-item "><a routerLink="/recipes"
-           routerLinkActive="active">Recette</a></button>
-      <button class="nav-item "><a routerLink="/profile"
-           routerLinkActive="active">Profile</a></button>
-
-      <mat-list-item>
-        <button class="nav-item__logout"
-                (click)="logout()">Logout</button>
-      </mat-list-item>
-    </mat-toolbar>
+<header>
+  <mat-nav-list>
+    <a mat-list-item
+       routerLink="/home"
+       routerLinkActive="active"> Accueil </a>
+    <a mat-list-item
+       routerLink="/recipes"
+       routerLinkActive="active"> Recettes </a>
+    <a mat-list-item
+       routerLink="/menu"
+       routerLinkActive="active"> Mon Menu </a>
+    <ng-container *ngIf="user; else loginBtnTemplate">
+      <a mat-list-item
+         routerLink="/profile"
+         routerLinkActive="active">
+        Profile
+      </a>
+      <button mat-list-item
+              class="logoutBtn"
+              (click)="onLogout()">
+        <mat-icon matListIcon>logout</mat-icon>
+        Deconnexion
+      </button>
+    </ng-container>
+    <ng-template #loginBtnTemplate>
+      <button mat-list-item
+              class="loginBtn"
+              (click)="onLogin()">
+        <mat-icon matListIcon>login</mat-icon>
+        Connexion
+      </button>
+    </ng-template>
   </mat-nav-list>
-</header> -->
 
-<header id="header-nav">
-  <mat-toolbar class="nav-menu"
-               color="primary">
-    <mat-icon button
-              mat-button
-              [matMenuTriggerFor]="menu">menu</mat-icon>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
-      <button mat-menu-item class="nav-item"><a routerLink="/menu" routerLinkActive="active">Menu</a></button>
-      <button mat-menu-item class="nav-item"><a routerLink="/recipes" routerLinkActive="active">Recettes</a></button>
-      <button mat-menu-item class="nav-item"><a routerLink="/profile" routerLinkActive="active">Mon profile</a></button>
-
-      <button class="nav-item__logout" (click)="logout()">Logout</button>
-    </mat-menu>
-  </mat-toolbar>
-
-  <mat-nav-list class="nav-list-desktop">
-    <mat-toolbar>
-      <button class="nav-item"><a routerLink="/home" routerLinkActive="active">Home</a></button>
-      <button class="nav-item "><a routerLink="/menu" routerLinkActive="active">Mon menu</a></button>
-      <button class="nav-item "><a routerLink="/recipes" routerLinkActive="active">Recettes</a></button>
-      <button class="nav-item "><a routerLink="/profile" routerLinkActive="active">Mon profile</a></button>
-
-
-
-      <button class="nav-item__logout" (click)="logout()">Logout</button>
-    </mat-toolbar>
-  </mat-nav-list>
+  <button mat-icon-button
+          class="mobileMenuBtn"
+          (click)="openSideNavHandler()">
+    <mat-icon>menu</mat-icon>
+  </button>
 </header>

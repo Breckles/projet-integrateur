@@ -1,0 +1,45 @@
+<button mat-icon-button
+        class="closeBtn"
+        (click)="onCloseHandler()">
+  <mat-icon>close</mat-icon>
+</button>
+
+<mat-nav-list>
+  <a mat-list-item
+     routerLink="/home"
+     routerLinkActive="active"
+     (click)="onCloseHandler()">
+    <mat-icon matListIcon>home</mat-icon>
+    Accueil
+  </a>
+  <a mat-list-item
+     routerLink="/recipes"
+     routerLinkActive="active"
+     (click)="onCloseHandler()">
+    <mat-icon matListIcon>list</mat-icon>
+    Recettes
+  </a>
+  <a mat-list-item
+     routerLink="/menu"
+     routerLinkActive="active"
+     (click)="onCloseHandler()">
+    <mat-icon matListIcon>restaurant_menu</mat-icon>
+    Mon Menu
+  </a>
+  <ng-container *ngIf="user">
+    <a mat-list-item
+       routerLink="/profile"
+       routerLinkActive="active"
+       (click)="onCloseHandler()">
+      <mat-icon matListIcon>person</mat-icon>
+      Profile
+    </a>
+    <mat-list-item>
+      <button mat-icon-button
+              (click)="onLogout()">
+        <mat-icon matListIcon>logout</mat-icon>
+        Deconnexion
+      </button>
+    </mat-list-item>
+  </ng-container>
+</mat-nav-list>

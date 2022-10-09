@@ -1,7 +1,13 @@
-<app-header></app-header>
-<!-- <mat-sidenav-container class="nav-container"> -->
-  <main>
-    <ng-content id="content"></ng-content>
-  </main>
-<!-- </mat-sidenav-container> -->
-<app-footer></app-footer>
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav #sideNav
+               fixedInViewport="true">
+    <app-side-nav (onClose)="sideNav.close()"></app-side-nav>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <app-header (onOpenSideNav)="sideNav.open()"></app-header>
+    <main>
+      <ng-content id="content"></ng-content>
+    </main>
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

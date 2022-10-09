@@ -1,0 +1,26 @@
+@use '/src/theme';
+
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  background-color: theme.$light-beige-power;
+}
+
+button.closeBtn {
+  margin: 5px;
+}
+
+a.mat-list-item {
+  color: theme.$dark-power;
+
+  mat-icon {
+    margin-right: 9px;
+  }
+}
+
+a.mat-list-item.active,
+a.mat-list-item:hover {
+  background-color: theme.$beige-power;
+}

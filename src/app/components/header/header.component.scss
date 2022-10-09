@@ -1,25 +1,69 @@
-.nav-container{
-    
-    border: 1px solid rgba(0, 0, 0, 0.5);
-    flex: 1;
-    mat-sidenav{
-        width: 150px;
+@use '/src/theme';
 
+:host {
+  display: block;
+  width: 100%;
+  height: 100%; // not a great default, but we should have one
+}
+
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+
+  background-color: theme.$dark-power;
+}
+
+mat-nav-list {
+  display: none;
+
+}
+
+button {
+  color: theme.$light-power;
+
+  mat-icon {
+    color: theme.$light-power;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  mat-nav-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+
+
+    .mat-list-item {
+      width: fit-content;
+      height: 100%;
+      padding: 0 10px;
+      font-family: inherit;
+      font-weight: 500;
+      color: theme.$light-power;
+
+      transition: 150ms background-color linear;
     }
-}
 
+    a.active,
+    a:hover {
+      background-color: theme.$gray-power;
+      color: theme.$dark-power;
+    }
 
+    button.loginBtn,
+    button.logoutBtn {
+      margin-left: auto;
+    }
+  }
 
-#header-nav>.nav-list-desktop{
-display: none;
-}
-/******** DESKTOP >= 1140PX *********/
- @media screen and (min-width: 1140px) {
-#header-nav>.nav-list-desktop{
-    display: unset;
-} 
-
-#header-nav>.nav-menu{
+  button.mobileMenuBtn {
     display: none;
+  }
 }
- }
