@@ -10,6 +10,7 @@ import { MenuPageComponent } from './pages/menu-page/menu-page.component';
 import { RecipesPageComponent } from 'pages/recipes-page/recipes-page.component';
 import { ProfilePageComponent } from 'pages/profile-page/profile-page.component';
 import { AdminPageComponent } from 'pages/admin-page/admin-page.component';
+import { UserIsAdminGuard } from 'guards/user-is-admin.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -25,8 +26,11 @@ const routes: Routes = [
     component: ProfilePageComponent,
     canActivate: [UserLoggedInGuard],
   },
-  // need to restrict this route to admins
-  { path: 'admin', component: AdminPageComponent },
+  {
+    path: 'admin',
+    component: AdminPageComponent,
+    canActivate: [UserIsAdminGuard],
+  },
 ];
 
 @NgModule({

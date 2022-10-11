@@ -35,7 +35,7 @@ export class UserLoggedInGuard implements CanActivate {
         this.modalService.openModal<AuthComponent>(AuthComponent, state.url);
       }
 
-      return !!user && user.role == 'A';
+      return !!user;
     });
   }
 }
