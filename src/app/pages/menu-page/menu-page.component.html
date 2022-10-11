@@ -11,10 +11,12 @@
     <mat-card-content>
       <app-recipe-list-display *ngIf="dayRecipes.length > 0; else noRecipes"
                                [recipes]="dayRecipes"
+                               [date]="dateSelected"
                                [showAddToMenuButton]="false"
+                               [showRemoveFromMenuButton]="true"
                                [columns]="menuRecipesGridCols"></app-recipe-list-display>
-      <ng-template #noRecipes> <span class="content" > Il n'y a aucune recette pour cette journee. 
-        Souhaitez-vous en ajouter une ? </span> </ng-template>
+      <ng-template #noRecipes> <span class="content"> Il n'y a aucune recette pour cette journee.
+          Souhaitez-vous en ajouter une ? </span> </ng-template>
     </mat-card-content>
   </mat-card>
 </div>
@@ -28,6 +30,7 @@
                              [recipes]="userRecipes"
                              [showAddToMenuButton]="false"
                              [showModifyButton]="true"
+                             [showDeleteButton]="true"
                              [columns]="userRecipesGridCols"></app-recipe-list-display>
   </mat-card-content>
   <mat-card-actions>

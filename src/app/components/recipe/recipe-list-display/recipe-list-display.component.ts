@@ -16,9 +16,15 @@ export class RecipeListDisplayComponent implements OnInit, OnChanges {
   @Input()
   recipes: IRecette[] = [];
   @Input()
+  date = new Date();
+  @Input()
   showAddToMenuButton: boolean = true;
   @Input()
   showModifyButton: boolean = false;
+  @Input()
+  showDeleteButton: boolean = false;
+  @Input()
+  showRemoveFromMenuButton: boolean = false;
 
   @Input()
   columns!: number;

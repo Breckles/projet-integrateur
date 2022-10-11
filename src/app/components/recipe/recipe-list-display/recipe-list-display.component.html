@@ -3,7 +3,10 @@
                gutterSize="10px">
   <mat-grid-tile *ngFor="let recipe of recipes">
     <app-recipe-card [recipe]="recipe"
+                     [date]="date"
                      [showAddToMenuButton]="showAddToMenuButton"
+                     [showDeleteButton]="showDeleteButton"
+                     [showRemoveFromMenuButton]="showRemoveFromMenuButton"
                      [showModifyButton]="showModifyButton"></app-recipe-card>
   </mat-grid-tile>
 </mat-grid-list>

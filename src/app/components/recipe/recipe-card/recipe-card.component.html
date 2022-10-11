@@ -4,7 +4,7 @@
        [src]="recipe.image"
        [alt]="recipe.nom">
   <mat-card-content>{{recipe.nom}}</mat-card-content>
-  <mat-card-actions *ngIf="showAddToMenuButton || showModifyButton">
+  <mat-card-actions>
     <ng-container *ngIf="showAddToMenuButton">
       <button mat-icon-button
               type="button"
@@ -25,6 +25,18 @@
         <app-recipe-form [recipeToModify]="recipe"></app-recipe-form>
       </ng-template>
     </ng-container>
+    <button mat-icon-button
+            type="button"
+            *ngIf="showDeleteButton"
+            (click)="onDeleteRecipe($event)">
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button mat-icon-button
+            type="button"
+            *ngIf="showRemoveFromMenuButton"
+            (click)="onRemoveRecipeFromMenu($event)">
+      <mat-icon>close</mat-icon>
+    </button>
   </mat-card-actions>
   <ng-template #recipeDetailModalContent>
     <app-recipe-detail-modal-content [recipeToShow]="recipe"></app-recipe-detail-modal-content>

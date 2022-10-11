@@ -58,4 +58,8 @@ export class RecipeService {
 
     return userRecipes;
   }
+
+  deleteRecipe(id: string) {
+    return this.recipeCollection.doc(id).delete();
+  }
 }

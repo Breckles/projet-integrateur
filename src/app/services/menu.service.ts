@@ -4,6 +4,8 @@ import {
   AngularFirestoreCollection,
 } from '@angular/fire/compat/firestore';
 
+import firebase from 'firebase/compat/app';
+
 import { IMenuJour } from 'models/menu-jour';
 import { IRecette } from 'models/recipe.model';
 
@@ -93,6 +95,24 @@ export class MenuService {
   }
 
   // D - Delete
+  async removeRecipeFromMenu(recipe: IRecette, date: Date) {
+    const appUser = await this.auth.getUser();
+
+    if (appUser) {
+      const result = await this.menuCollection.ref
+        .where('uid', '==', appUser.uid)
+        .where('journee', '==', this.convertDate(date))
+        .get();
+
+      if (!result.empty) {
+        const menu = result.docs[0].data();
+
+        return result.docs[0].ref.update({
+          recettes: firebase.firestore.FieldValue.arrayRemove(recipe),
+        });
+      }
+    }
+  }
 
   private convertDate(date: Date) {
     const day = date.getUTCDate();
