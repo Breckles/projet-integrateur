@@ -12,15 +12,19 @@ import { AuthService } from 'services/auth.service';
 @Injectable({
   providedIn: 'root',
 })
-export class UserIsAdminGuard implements CanActivate {
+export class UserIsActiveGuard implements CanActivate {
   constructor(private auth: AuthService) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ): Promise<boolean> {
+  ):
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree>
+    | boolean
+    | UrlTree {
     return this.auth.getUser().then((user) => {
-      return !!user && user.role == 'A';
+      return !!user && user.actif === 1;
     });
   }
 }

@@ -79,7 +79,7 @@ export class AuthService {
     const sessionUser = sessionStorage.getItem('appUser');
 
     if (sessionUser) {
-      return JSON.parse(sessionUser);
+      return JSON.parse(sessionUser) as IUser;
     }
 
     // const firebaseUser = await this.auth.currentUser;

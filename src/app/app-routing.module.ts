@@ -11,6 +11,7 @@ import { RecipesPageComponent } from 'pages/recipes-page/recipes-page.component'
 import { ProfilePageComponent } from 'pages/profile-page/profile-page.component';
 import { AdminPageComponent } from 'pages/admin-page/admin-page.component';
 import { UserIsAdminGuard } from 'guards/user-is-admin.guard';
+import { UserIsActiveGuard } from 'guards/user-is-active.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +19,7 @@ const routes: Routes = [
   {
     path: 'menu',
     component: MenuPageComponent,
-    canActivate: [UserLoggedInGuard],
+    canActivate: [UserIsActiveGuard],
   },
   { path: 'recipes', component: RecipesPageComponent },
   {
