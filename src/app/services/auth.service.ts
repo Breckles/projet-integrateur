@@ -19,6 +19,7 @@ export class AuthService {
   private _appUser: IUser | undefined;
   private userCollection: AngularFirestoreCollection<IUser>;
   appUser: Subject<IUser | undefined>;
+  private _isAdmin: Subject<boolean> = new Subject();
 
   constructor(
     private auth: AngularFireAuth,
@@ -62,29 +63,36 @@ export class AuthService {
         this._appUser = newUser;
       }
     }
+
     this.appUser.next(this._appUser);
+    sessionStorage.setItem('appUser', JSON.stringify(this._appUser));
   }
 
   private unsetAppUser() {
     this._appUser = undefined;
     window.localStorage.removeItem('appUser');
     this.appUser.next(this._appUser);
+    sessionStorage.removeItem('appUser');
   }
 
   async getUser() {
-    if (this._appUser) {
-      return { ...this._appUser };
+    const sessionUser = sessionStorage.getItem('appUser');
+
+    if (sessionUser) {
+      return JSON.parse(sessionUser) as IUser;
     }
 
-    const firebaseUser = await this.auth.currentUser;
-    if (firebaseUser) {
-      const response = await this.userCollection
-        .doc(firebaseUser.uid)
-        .ref.get();
-      return response.data();
-    }
+    // const firebaseUser = await this.auth.currentUser;
 
-    return;
+    return this.auth.currentUser.then((firebaseUser) => {
+      if (firebaseUser) {
+        return this.userCollection
+          .doc(firebaseUser.uid)
+          .ref.get()
+          .then((res) => res.data());
+      }
+      return;
+    });
   }
 
   async getAllAppUsers() {
@@ -106,6 +114,7 @@ export class AuthService {
 
     return value;
   }
+
   async updateUser(updateData: Partial<IUser>) {
     const user = await this.auth.currentUser;
     if (user) {
@@ -113,6 +122,10 @@ export class AuthService {
       this._appUser = { ...this._appUser!, ...updateData };
       this.appUser.next({ ...this._appUser });
     }
+  }
+
+  currentUserIsAdmin() {
+    return this._isAdmin;
   }
 
   logout() {
