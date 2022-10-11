@@ -14,7 +14,7 @@ export class RecipesPageComponent implements OnInit, OnDestroy {
   private recipesSubscription: Subscription | null = null;
 
   gridColSizes = {
-    small: 1,
+    small: 2,
     medium: 3,
     large: 5,
   };
