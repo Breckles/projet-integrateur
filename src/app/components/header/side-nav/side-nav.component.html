@@ -26,7 +26,7 @@
     <mat-icon matListIcon>restaurant_menu</mat-icon>
     Mon Menu
   </a>
-  <ng-container *ngIf="user">
+  <ng-container *ngIf="user; else loginBtnTemplate">
     <a mat-list-item
        routerLink="/profile"
        routerLinkActive="active"
@@ -34,6 +34,15 @@
       <mat-icon matListIcon>person</mat-icon>
       Profile
     </a>
+    <ng-container *ngIf="user.role === 'A'">
+      <a mat-list-item
+         routerLink="/admin"
+         routerLinkActive="active"
+         (click)="onCloseHandler()">
+        <mat-icon matListIcon>settings</mat-icon>
+        Admin
+      </a>
+    </ng-container>
     <mat-list-item>
       <button mat-icon-button
               (click)="onLogout()">
@@ -42,4 +51,14 @@
       </button>
     </mat-list-item>
   </ng-container>
+  <ng-template #loginBtnTemplate>
+    <mat-list-item>
+      <button mat-icon-button
+              (click)="onLogin()">
+        <mat-icon matListIcon>login</mat-icon>
+        Connexion
+      </button>
+    </mat-list-item>
+  </ng-template>
+
 </mat-nav-list>

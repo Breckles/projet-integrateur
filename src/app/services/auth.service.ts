@@ -82,17 +82,14 @@ export class AuthService {
       return JSON.parse(sessionUser) as IUser;
     }
 
-    // const firebaseUser = await this.auth.currentUser;
+    const firebaseUser = await this.auth.currentUser;
 
-    return this.auth.currentUser.then((firebaseUser) => {
-      if (firebaseUser) {
-        return this.userCollection
-          .doc(firebaseUser.uid)
-          .ref.get()
-          .then((res) => res.data());
-      }
-      return;
-    });
+    if (firebaseUser) {
+      const user = await this.userCollection.doc(firebaseUser.uid).ref.get();
+
+      return user.data();
+    }
+    return;
   }
 
   async getAllAppUsers() {

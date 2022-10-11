@@ -6,9 +6,11 @@ import {
   Output,
 } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthComponent } from 'components/auth/auth.component';
 import { IUser } from 'models/user.model';
 import { Subscription } from 'rxjs';
 import { AuthService } from 'services/auth.service';
+import { ModalService } from 'services/modal.service';
 
 @Component({
   selector: 'app-side-nav',
@@ -22,7 +24,7 @@ export class SideNavComponent implements OnInit, OnDestroy {
   user: IUser | undefined;
   userSub = new Subscription();
 
-  constructor(private auth: AuthService) {}
+  constructor(private auth: AuthService, private ms: ModalService) {}
 
   ngOnInit(): void {
     this.auth.getUser().then((user) => {
@@ -46,6 +48,12 @@ export class SideNavComponent implements OnInit, OnDestroy {
 
   onLogout() {
     this.auth.logout();
+    this.onClose.emit();
+  }
+
+  onLogin() {
+    this.ms.openModal<AuthComponent>(AuthComponent);
+    this.onClose.emit();
   }
 
   ngOnDestroy(): void {
