@@ -5,7 +5,9 @@ import {
   TemplateRef,
   ViewChild,
 } from '@angular/core';
+import { AuthComponent } from 'components/auth/auth.component';
 import { IRecette } from 'models/recipe.model';
+import { AuthService } from 'services/auth.service';
 import { ModalService } from 'services/modal.service';
 
 @Component({
@@ -29,7 +31,7 @@ export class RecipeCardComponent implements OnInit {
   @ViewChild('modifyRecipeModalContent')
   modifyRecipeModalContent!: TemplateRef<any>;
 
-  constructor(private ms: ModalService) {}
+  constructor(private auth: AuthService, private ms: ModalService) {}
 
   ngOnInit(): void {
     if (!this.recipe) {
@@ -39,12 +41,17 @@ export class RecipeCardComponent implements OnInit {
 
   onAddRecipe(e: Event) {
     e.stopPropagation();
-    this.ms.openModal(this.addToMenuModalContent);
+    this.auth.getUser().then((user) => {
+      if (user) {
+        this.ms.openModal(this.addToMenuModalContent);
+      } else {
+        this.ms.openModal<AuthComponent>(AuthComponent);
+      }
+    });
   }
 
   onShowDetails() {
     console.log(this.recipeDetailModalContent);
-
     this.ms.openModal(this.recipeDetailModalContent);
   }
 
