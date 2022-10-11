@@ -23,7 +23,6 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
     this.rs.recipes.subscribe((recipes) => {
       this.recettesVedettes = recipes;
-      console.log(recipes);
     });
 
     this.onResize();
@@ -31,16 +30,11 @@ export class HomePageComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    console.log('in onResize');
-
     if (window.innerWidth < 500) {
-      console.log('in onResize small');
       this.gridCols = this.gridColSizes.small;
     } else if (window.innerWidth < 1140) {
-      console.log('in onResize medium');
       this.gridCols = this.gridColSizes.medium;
     } else {
-      console.log('in onResize large');
       this.gridCols = this.gridColSizes.large;
     }
   }

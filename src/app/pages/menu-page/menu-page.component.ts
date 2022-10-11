@@ -53,7 +53,6 @@ export class MenuPageComponent implements OnInit {
   }
 
   onDateSelectedChange(newDate: Date) {
-    console.log('Selected date has changed: ' + newDate.toISOString());
     this.ms.getMenuByDate(newDate).then((menu) => {
       if (!!menu) {
         this.dayRecipes = menu.recettes;
@@ -65,18 +64,13 @@ export class MenuPageComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    console.log('in onResize');
-
     if (window.innerWidth < 500) {
-      console.log('in onResize small');
       this.menuRecipesGridCols = this.menuRecipesGridColSizes.small;
       this.userRecipesGridCols = this.userRecipesGridColSizes.small;
     } else if (window.innerWidth < 1140) {
-      console.log('in onResize medium');
       this.menuRecipesGridCols = this.menuRecipesGridColSizes.medium;
       this.userRecipesGridCols = this.userRecipesGridColSizes.medium;
     } else {
-      console.log('in onResize large');
       this.menuRecipesGridCols = this.menuRecipesGridColSizes.large;
       this.userRecipesGridCols = this.userRecipesGridColSizes.large;
     }

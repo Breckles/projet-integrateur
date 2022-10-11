@@ -41,8 +41,6 @@ export class SideNavComponent implements OnInit, OnDestroy {
   }
 
   onCloseHandler() {
-    console.log('in onNavigateHandler');
-
     this.onClose.emit();
   }
 

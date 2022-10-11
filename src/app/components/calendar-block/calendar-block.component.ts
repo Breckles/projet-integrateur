@@ -14,7 +14,7 @@ export class CalendarBlockComponent implements OnInit {
 
   @Input() recipe!: IRecette;
 
-//size for mobile
+  //size for mobile
   gridCols = 1;
 
   calendarTileColSpan = 1;
@@ -34,21 +34,18 @@ export class CalendarBlockComponent implements OnInit {
 
   constructor(private recipeService: RecipeService) {}
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.handleResize();
-    this.recipeService.recipes.subscribe((recipes)=>{
+    this.recipeService.recipes.subscribe((recipes) => {
       this.recipes = recipes;
     });
   }
 
   @HostListener('window:resize')
   handleResize() {
-    console.log('in handle resize');
-
     const windowSize = window.innerWidth;
-    console.log(windowSize);
 
-//size for mobile/tablet
+    //size for mobile/tablet
     if (windowSize < 700) {
       this.gridCols = 1;
 

@@ -49,8 +49,6 @@ export class RecipeCardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    console.log(this.showRemoveFromMenuButton);
-
     if (!this.recipe) {
       throw new Error('You need to provide a recipe for this component');
     }
@@ -68,7 +66,6 @@ export class RecipeCardComponent implements OnInit {
   }
 
   onShowDetails() {
-    console.log(this.recipeDetailModalContent);
     this.ms.openModal(this.recipeDetailModalContent);
   }
 

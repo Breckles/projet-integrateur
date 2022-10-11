@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
         pairwise()
       )
       .subscribe((e: any) => {
-        console.log(e[0].urlAfterRedirects); // previous url
+        // console.log(e[0].urlAfterRedirects); // previous url
       });
   }
 
