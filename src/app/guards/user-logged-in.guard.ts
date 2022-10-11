@@ -14,13 +14,14 @@ import { FirebaseuiAngularLibraryComponent } from 'firebaseui-angular';
 
 import { ModalService } from '../services/modal.service';
 import { AuthComponent } from '../components/auth/auth.component';
+import { AuthService } from 'services/auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserLoggedInGuard implements CanActivate {
   constructor(
-    private auth: AngularFireAuth,
+    private auth: AuthService,
     private modalService: ModalService,
     private router: Router
   ) {}
@@ -28,18 +29,13 @@ export class UserLoggedInGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
-  ):
-    | Observable<boolean | UrlTree>
-    | Promise<boolean | UrlTree>
-    | boolean
-    | UrlTree {
-    return this.auth.user.pipe(
-      map((user) => {
-        if (user == null) {
-          this.modalService.openModal<AuthComponent>(AuthComponent, state.url);
-        }
-        return user != null;
-      })
-    );
+  ): Promise<boolean> {
+    return this.auth.getUser().then((user) => {
+      if (!user) {
+        this.modalService.openModal<AuthComponent>(AuthComponent, state.url);
+      }
+
+      return !!user && user.role == 'A';
+    });
   }
 }
