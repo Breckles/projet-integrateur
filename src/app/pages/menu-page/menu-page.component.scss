@@ -1,3 +1,5 @@
+@use '/src/theme';
+
 :host,
 .menuSection {
   display: flex;
@@ -12,19 +14,24 @@
   flex: 1;
 }
 
+.mat-button{
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+  background-color: theme.$gray-power;
+  color: theme.$dark-power;
+}
+
 mat-card-actions {
   display: flex;
   justify-content: flex-end;
 }
 
+
 //DESKTOP
 @media screen and (min-width: 650px) {
   .menuSection {
     flex-direction: row;
-  }
-
-  .mat-card {
-    // max-width: 50%;
   }
 
   .userRecipesSection {
@@ -35,5 +42,5 @@ mat-card-actions {
 .content{
   font-size: 2rem;
   line-height: 2.8rem;
-  color: #9b9b9b;
+  color: theme.$gray-power;
 }

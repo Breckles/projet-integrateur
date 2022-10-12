@@ -1,10 +1,15 @@
+
+<!--Desktop-->
 <footer class="footer__desktop">
 <mat-toolbar>
-    <a mat-button routerLink="/home" routerLinkActive="active">À propos</a>
-    <a mat-button routerLink="/profile" routerLinkActive="active">Mon profil</a>
+    <a mat-button routerLink="/home" routerLinkActive="active">Acceuil</a>
     <a mat-button routerLink="/recipes" routerLinkActive="active">Recettes</a>
+    <a mat-button routerLink="/menu" routerLinkActive="active">Mon menu</a>
+    <a mat-button routerLink="/profile" routerLinkActive="active">Mon profile</a>
 </mat-toolbar>
 </footer>
+
+<!--mobile-->
 <footer class="footer__mobile">
     <mat-accordion>
         <mat-expansion-panel (opened)="setStep(0)" hideToggle="false">
@@ -12,7 +17,6 @@
                 <mat-panel-title style="color: #ffffff">
                     À propos
                 </mat-panel-title>
-                  <!--  <mat-icon>keyboard_arrow_down</mat-icon> -->
             </mat-expansion-panel-header>
             <mat-nav-list>
                 <mat-list-item> <a routerLink="/home" routerLinkActive="active">Home</a></mat-list-item>
@@ -26,7 +30,7 @@
                 </mat-panel-title>
             </mat-expansion-panel-header>
             <mat-nav-list>
-                <mat-list-item> <a routerLink="/profile" routerLinkActive="active">Mon profil</a></mat-list-item>
+                <mat-list-item> <a routerLink="/profile" routerLinkActive="active">Mon profile</a></mat-list-item>
                 <mat-list-item> <a routerLink="/menu" routerLinkActive="active">Mon menu</a></mat-list-item>
             </mat-nav-list>
         </mat-expansion-panel>

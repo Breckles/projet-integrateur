@@ -16,7 +16,9 @@
                                [showRemoveFromMenuButton]="true"
                                [columns]="menuRecipesGridCols"></app-recipe-list-display>
       <ng-template #noRecipes> <span class="content"> Il n'y a aucune recette pour cette journee.
-          Souhaitez-vous en ajouter une ? </span> </ng-template>
+          Souhaitez-vous en ajouter une ? </span> 
+        <button mat-button routerLink="/recipes" routerLinkActive="active">Voir les recettes</button>
+        </ng-template>
     </mat-card-content>
   </mat-card>
 </div>

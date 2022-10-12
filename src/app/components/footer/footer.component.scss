@@ -1,8 +1,12 @@
+@use '/src/theme';
+
 .mat-toolbar {
   justify-content: center;
-  background: #333333;
-  color: #ffffff;
+  background-color: theme.$dark-power;
   height: 100px;
+  font-family: inherit;
+  font-weight: 500;
+  color: theme.$light-power;
 }
 
 /******** DESKTOP >= 1140PX *********/
@@ -10,6 +14,8 @@
   .footer__mobile {
     display: none;
   }
+
+  
 }
 /******** Mobile < 1140PX *********/
 
@@ -22,12 +28,11 @@
     right: 0;
     left: 0;
     bottom:0;
-   //position: fixed;
-    background-color: #333333;
+    background-color: theme.$dark-power;
   }
 
   .mat-expansion-panel {
-    background-color: #333333;
+    background-color: theme.$dark-power;
   }
 
   .mat-expansion-panel .mat-expansion-panel-header .mat-panel-title {
@@ -36,13 +41,14 @@
 
   .mat-list-item {
     color: #ffffff !important;
+    font-family: inherit;
   }
 
 
   // quick and dirty hack for touch devices running chrome
   @media (hover: none) {
     .mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
-      background-color: #333333;
+      background-color: theme.$dark-power;
     }
   }
 }
