@@ -1,14 +1,17 @@
-import {  
+import {
   Component,
   Input,
   OnInit,
   TemplateRef,
-  ViewChild} from '@angular/core';
-import {IIngredientRecette} from 'models/ingredient-recette.model';
-import {MatTableModule} from '@angular/material/table';
+  ViewChild,
+} from '@angular/core';
+import { IIngredientRecette } from 'models/ingredient-recette.model';
+import { MatTableModule } from '@angular/material/table';
 
 import { IRecette } from 'models/recipe.model';
 import { ModalService } from 'services/modal.service';
+import { AuthService } from 'services/auth.service';
+import { AuthComponent } from 'components/auth/auth.component';
 
 @Component({
   selector: 'app-recipe-detail-modal-content',
@@ -45,8 +48,7 @@ export class RecipeDetailModalContentComponent implements OnInit {
     'Autre',
   ];
 
-
-  constructor(private ms: ModalService) {}
+  constructor(private auth: AuthService, private ms: ModalService) {}
 
   ngOnInit(): void {
     if (!this.recipeToShow) {
@@ -55,9 +57,16 @@ export class RecipeDetailModalContentComponent implements OnInit {
       );
     }
   }
-  onAddRecipe(e: Event) {
+  async onAddRecipe(e: Event) {
     e.stopPropagation();
-    this.ms.openModal(this.addToMenuModalContent);
+
+    const user = await this.auth.getUser();
+
+    if (!user) {
+      this.ms.openModal(AuthComponent);
+    } else {
+      this.ms.openModal(this.addToMenuModalContent);
+    }
   }
   closeModal() {
     this.ms.closeModal();
